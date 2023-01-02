@@ -70,25 +70,49 @@ class PrintallController extends Controller
     }
 
     //print
-    public function print_all(Request $request)
-    // public function print_all()
+    public function print_all(Request $request, $id)
     {
-        $getid = $request->segments(3);
+        $pengadaan = Jadwal::find($id);
+        $barang = DB::table('barangs')
+            ->where('barangs.pengadaan_id', 'like', "%" . $pengadaan->pengadaan_id . "%")
+            ->get();
+        $pejabat = DB::table('pejabats')
+            ->where('id', '=', 1)
+            ->get();
 
-        $pengadaan = Jadwal::find($getid);
-        // $barang = DB::table('barangs')
-        //     ->where('barangs.pengadaan_id', 'like', "%" . $pengadaan->pengadaan_id . "%")
-        //     ->get();
+        // $pejabat = Pejabat::all();
 
-        //     $pdf = PDF::loadview(
-        //         // $pdf = word::loadview(
-        //         'cetak/nota_dinas1',
-        //         ['pengadaan' => $pengadaan],
-        //         ['barang' => $barang],
-        //         // ['pejabat' => $pejabat],
-        //         // );
-        //     )->setPaper('f4', 'potrait');
-        //     return $pdf->download('NotaDinas1.pdf');
-        dd($getid);
+        // dd($pengadaan, $barang );
+        $pdf = PDF::loadview(
+            // $pdf = word::loadview(
+            'allprint/allprint',
+            ['pengadaan' => $pengadaan],
+            ['barang' => $barang],
+            // ['pejabat' => $pejabat],
+            // );
+        )->setPaper('f4', 'potrait');
+        return $pdf->download('ALL.pdf');
+        // dd($pdf);
     }
+    // public function print_all(Request $request)
+    // // public function print_all()
+    // {
+    //     $getid = $request->segments(3);
+
+    //     $pengadaan = Jadwal::find($getid);
+    //     // $barang = DB::table('barangs')
+    //     //     ->where('barangs.pengadaan_id', 'like', "%" . $pengadaan->pengadaan_id . "%")
+    //     //     ->get();
+
+    //         $pdf = PDF::loadview(
+    //             // $pdf = word::loadview(
+    //             'allprint/allprint',
+    //             ['pengadaan' => $pengadaan],
+    //             ['barang' => $barang],
+    //             // ['pejabat' => $pejabat],
+    //             // );
+    //         )->setPaper('f4', 'potrait');
+    //         return $pdf->download('ALL.pdf');
+    //     // dd($getid);
+    // }
 }

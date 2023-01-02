@@ -139,7 +139,7 @@ Route::get('/pengadaan2cari', [PengadaanController::class, 'cari2'])->name('cari
 Route::get('/allpengadaan1', [PrintallController::class, 'printall_1']);
 //  [PrintallController::class, 'printall_1']);
 Route::get('/allpengadaan1/showall/{id}', [PrintallController::class, 'showall'])->name('allpengadaan1.show');
-Route::get('pengadaan1/printall/{id}', [PrintallController::class, 'printall'])->name('allpengadaan1.print');
+Route::get('pengadaan1/printall/{id}', [PrintallController::class, 'print_all'])->name('allpengadaan1.print');
 
 Route::get('/allpengadaan2', [PrintallController::class, 'printall_2']);
 Route::get('/allpengadaan2/showall/{id}', [PrintallController::class, 'showall'])->name('allpengadaan2.show');

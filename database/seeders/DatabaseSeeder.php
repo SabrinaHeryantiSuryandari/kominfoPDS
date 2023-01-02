@@ -25,11 +25,11 @@ class DatabaseSeeder extends Seeder
 
         // ]);
 
-        // User::factory()->create([
-        //     'name' => 'ADMIN',
-        //     'email' => 'admin@example.com',
-        //     'password' => bcrypt('admin'),
-        // ]);
+        User::factory()->create([
+            'name' => 'ADMIN',
+            'email' => 'admin@example.com',
+            'password' => bcrypt('admin'),
+        ]);
 
         \App\Models\Pejabat::create([
             // 'id' => '0',
