@@ -81,120 +81,122 @@
 
     <br>
     {{-- <div class="row"> --}}
-        <table border="0" width="535">
-            <tr>
-                <td width="8"></td>
-                <td style="text-align: left ;text-align: justify;">Melakukan klarifikasi dan negosiasi terhadap penawaran yang diajukan oleh : {{$pengadaan->pengadaan->pelaksana->pt_pelaksana}} {{$pengadaan->pengadaan->pelaksana->alamat}} {{$pengadaan->pengadaan->pelaksana->kota}} dengan hasil terlampir.</td>
-            </tr>
-        </table>
+    <table border="0" width="535">
+        <tr>
+            <td width="8"></td>
+            <td style="text-align: left ;text-align: justify;">Melakukan klarifikasi dan negosiasi terhadap penawaran yang diajukan oleh : {{$pengadaan->pengadaan->pelaksana->pt_pelaksana}} {{$pengadaan->pengadaan->pelaksana->alamat}} {{$pengadaan->pengadaan->pelaksana->kota}} dengan hasil terlampir.</td>
+        </tr>
+    </table>
     {{-- </div> --}}
 
     <br>
     {{-- <div class="row"> --}}
-        <table border="0" width="535">
-            <tr>
-                <td width="8"></td>
-                <td style="text-indent: 45px; text-align: justify;">Dari hasil klarifikasi dan negosiasi harga, ditetapkan sebagai penyedia yaitu :</td>
-            </tr>
-        </table>
+    <table border="0" width="535">
+        <tr>
+            <td width="8"></td>
+            <td style="text-indent: 45px; text-align: justify;">Dari hasil klarifikasi dan negosiasi harga, ditetapkan sebagai penyedia yaitu :</td>
+        </tr>
+    </table>
     {{-- </div> --}}
 
     {{-- <div> --}}
-        <table border="0" width="535">
-            <tr>
-                <td width="8" rowspan="6"></td>
-                <td width="180">Nama Perusahaan</td>
-                <td width="5">:</td>
-                <td>{{$pengadaan->pengadaan->pelaksana->pt_pelaksana}}</td>
-            </tr>
-            <tr>
-                <td width="180">Nama Penanggung Jawab</td>
-                <td>:</td>
-                <td >{{$pengadaan->pengadaan->pelaksana->nama_pelaksana}}</td>
-            </tr>
-            <tr>
-                <td width="180">Alamat Perusahaan</td>
-                <td>:</td>
-                <td >{{$pengadaan->pengadaan->pelaksana->alamat}}, {{$pengadaan->pengadaan->pelaksana->kota}}</td>
-            </tr>
-            <tr>
-                <td width="180">Nomomr Pokok Wajib Pajak</td>
-                <td>:</td>
-                <td >{{$pengadaan->pengadaan->pelaksana->npwp}}</td>
-            </tr>
-            <tr>
-                <td width="180" style="vertical-align: top;">Pekerjaan</td>
-                <td style="vertical-align: top;">:</td>
-                <td  style="text-align: justify;">{{$pengadaan->pengadaan->jenis_pengadaan}}</td>
-            </tr>
-            <tr>
-                <td width="180">Dengan Harga</td>
-                <td>:</td>
-                <td >RP. {{number_format($pengadaan->pengadaan->nilai_negosiasi)}},- ({{$pengadaan->pengadaan->deskripsi_negosiasi}})</td>
-            </tr>
-        </table>
+    <table border="0" width="535">
+        <tr>
+            <td width="8" rowspan="6"></td>
+            <td width="180">Nama Perusahaan</td>
+            <td width="5">:</td>
+            <td>{{$pengadaan->pengadaan->pelaksana->pt_pelaksana}}</td>
+        </tr>
+        <tr>
+            <td width="180">Nama Penanggung Jawab</td>
+            <td>:</td>
+            <td>{{$pengadaan->pengadaan->pelaksana->nama_pelaksana}}</td>
+        </tr>
+        <tr>
+            <td width="180">Alamat Perusahaan</td>
+            <td>:</td>
+            <td>{{$pengadaan->pengadaan->pelaksana->alamat}}, {{$pengadaan->pengadaan->pelaksana->kota}}</td>
+        </tr>
+        <tr>
+            <td width="180">Nomomr Pokok Wajib Pajak</td>
+            <td>:</td>
+            <td>{{$pengadaan->pengadaan->pelaksana->npwp}}</td>
+        </tr>
+        <tr>
+            <td width="180" style="vertical-align: top;">Pekerjaan</td>
+            <td style="vertical-align: top;">:</td>
+            <td style="text-align: justify;">{{$pengadaan->pengadaan->jenis_pengadaan}}</td>
+        </tr>
+        <tr>
+            <td width="180">Dengan Harga</td>
+            <td>:</td>
+            <td>RP. {{number_format($pengadaan->pengadaan->nilai_negosiasi)}},- ({{$pengadaan->pengadaan->deskripsi_negosiasi}})</td>
+        </tr>
+    </table>
     {{-- </div> --}}
     <br>
     {{-- <div class="row"> --}}
-        <table border="0" width="535">
-            <tr>
-                <td width="8"></td>
-                <td style="text-align: left ;text-align: justify;">Dengan pertimbangan bahwa spesifikasi teknis sesuai dengan ketentuan dan harga dapat dipertanggungjawabkan dan menguntungkan Pemerintah Provinsi Jawa Timur.</td>
-            </tr>
-            <tr><td hidden="10"></td></tr>
-            <tr>
-                <td width="8"></td>
-                <td style="text-align: left ;text-align: justify; text-indent: 45px;">Demikian Berita Acara ini dibuat untuk dipergunakan sebagai bahan pertimbangan dalam pelaksanaan pengadaan langsung.</td>
-            </tr>
-        </table>
-    </div>
+    <table border="0" width="535">
+        <tr>
+            <td width="8"></td>
+            <td style="text-align: left ;text-align: justify;">Dengan pertimbangan bahwa spesifikasi teknis sesuai dengan ketentuan dan harga dapat dipertanggungjawabkan dan menguntungkan Pemerintah Provinsi Jawa Timur.</td>
+        </tr>
+        <tr>
+            <td hidden="10"></td>
+        </tr>
+        <tr>
+            <td width="8"></td>
+            <td style="text-align: left ;text-align: justify; text-indent: 45px;">Demikian Berita Acara ini dibuat untuk dipergunakan sebagai bahan pertimbangan dalam pelaksanaan pengadaan langsung.</td>
+        </tr>
+    </table>
+</div>
 
-    <br>
-    <div style="text-align:center ;">
-        <table width="535" style="text-align: center" border="0" font-size="0">
-            <tr>
-                <td width="20"> </td>
-                <td width="250">Direktur</td>
-                <td width="250">PEJABAT PENGADAAN</td>
-                <td width="20"> </td>
-            </tr>
-        </table>
-    </div>
-    <div style="text-align:center ;">
-        <table style="text-align: center" border="0" font-size="0">
-            <tr>
-                <td width="20"> </td>
-                <td width="250">{{$pengadaan->pengadaan->pelaksana->pt_pelaksana}}</td>
-                <td width="250"> </td>
-                <td width="20"> </td>
-            </tr>
-        </table>
-    </div>
-    <br><br><br><br>
-    <div style="text-align:center ;">
-        <table style="text-align: center" border="0" font-size="0">
-            <tr>
-                <td width="20"> </td>
-                <td width="250"><u>{{$pengadaan->pengadaan->pelaksana->nama_pelaksana}}</u></td>
-                <td width="250"><u>{{$pjb->pejabat_pengadaan}}</u></td>
-                <td width="20"> </td>
-            </tr>
-        </table>
-    </div>
-    <div style="text-align:center ;">
-        <table style="text-align: center" border="0" font-size="0">
-            <tr>
-                <td width="20"> </td>
-                <td width="250"> </td>
-                <td width="250">NIP. {{$pjb->nip_pejabat_pengadaan}}</td>
-                <td width="20"> </td>
-            </tr>
-        </table>
-    </div>
-    @endforeach
-{{-- </div>
+<br>
+<div style="text-align:center ;">
+    <table width="535" style="text-align: center" border="0" font-size="0">
+        <tr>
+            <td width="20"> </td>
+            <td width="250">Direktur</td>
+            <td width="250">PEJABAT PENGADAAN</td>
+            <td width="20"> </td>
+        </tr>
+    </table>
+</div>
+<div style="text-align:center ;">
+    <table style="text-align: center" border="0" font-size="0">
+        <tr>
+            <td width="20"> </td>
+            <td width="250">{{$pengadaan->pengadaan->pelaksana->pt_pelaksana}}</td>
+            <td width="250"> </td>
+            <td width="20"> </td>
+        </tr>
+    </table>
+</div>
+<br><br><br><br>
+<div style="text-align:center ;">
+    <table style="text-align: center" border="0" font-size="0">
+        <tr>
+            <td width="20"> </td>
+            <td width="250"><u>{{$pengadaan->pengadaan->pelaksana->nama_pelaksana}}</u></td>
+            <td width="250"><u>{{$pjb->pejabat_pengadaan}}</u></td>
+            <td width="20"> </td>
+        </tr>
+    </table>
+</div>
+<div style="text-align:center ;">
+    <table style="text-align: center" border="0" font-size="0">
+        <tr>
+            <td width="20"> </td>
+            <td width="250"> </td>
+            <td width="250">NIP. {{$pjb->nip_pejabat_pengadaan}}</td>
+            <td width="20"> </td>
+        </tr>
+    </table>
+</div>
+@endforeach
+</div>
 
-<div class="card-body"> --}}
+<div class="card-body">
     <table width="535" border="1" align="center" style="color: #333333;border-width: 1px;border-color: #333333;border-collapse: collapse;">
         <thead>
             <tr align="center">
@@ -215,7 +217,7 @@
         </tr>
     </table>
     <br>
-    <table width="535" align="center" >
+    <table width="535" align="center">
         <tr>
             <td width="10" style="vertical-align:top">I.</td>
             <td width="510" style="vertical-align:top; text-align:justify;" colspan="3">Bahwa dalam proses Pengadaan Langsung pengadaan {{ $pengadaan->pengadaan->jenis_pengadaan}} telah diundang calon penyedia yaitu :</td>
@@ -230,7 +232,7 @@
             <td width="10"> </td>
             <td>Alamat</td>
             <td>:</td>
-            <td >{{$pengadaan->pengadaan->pelaksana->alamat}}</td>
+            <td>{{$pengadaan->pengadaan->pelaksana->alamat}}</td>
         </tr>
         <tr>
             <td width="10"> </td>
@@ -247,7 +249,7 @@
             <td width="10"> </td>
             <td width="5" style="vertical-align:top;">1.</td>
             <td colspan="3">
-            <table width="500" border="1" font-size="2" style="color: #333333;border-color: #333333;border-collapse: collapse;">
+                <table width="500" border="1" font-size="2" style="color: #333333;border-color: #333333;border-collapse: collapse;">
                     <thead style="text-align: center; background-color: lightgrey;">
                         <tr>
                             <th colspan="3">PENAWARAN</th>
@@ -291,7 +293,7 @@
         <tr>
             <td width="10"> </td>
             <td width="5" style="vertical-align:top; ">1.</td>
-            <td  style="vertical-align:top; " colspan="3">Evaluasi Administrasi</td>
+            <td style="vertical-align:top; " colspan="3">Evaluasi Administrasi</td>
         </tr>
         <tr>
             <td width="10"> </td>
@@ -338,7 +340,7 @@
                             <th width="100">KETERANGAN</th>
                         </tr>
                     </thead>
-                    <tbody >
+                    <tbody>
                         <tr>
                             <td>1</td>
                             <td>Syarat-syarat substansial yang diminta berdasarkan Dokumen Pemilihan dipenuhi/dilengkapi</td>
@@ -519,7 +521,7 @@
         <tbody>
             <tr align="center" height="100">
                 <th scope="row">1</th>
-                @foreach ($pejabat as $pjb)  
+                @foreach ($pejabat as $pjb)
                 <td>{{$pjb->pejabat_pengadaan}}</td>
                 @endforeach
                 <td>Pejabat Pengadaan</td>

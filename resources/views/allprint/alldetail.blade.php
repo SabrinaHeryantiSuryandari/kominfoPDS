@@ -6,80 +6,48 @@
     <ul>
         @foreach ($errors->all() as $error)
         <li>{{ $error }}</li>
-        @endforeach
-    </ul>
+@endforeach
+</ul>
 </div>
 @endif --}}
 @php
-    use App\Models\pejabat;
-    use App\Models\Jadwal;
+use App\Models\pejabat;
+use App\Models\Jadwal;
 
-    $pejabat = Pejabat::all();
-    $no = 1; 
+$pejabat = Pejabat::all();
+$no = 1;
 
-    $png = $pengadaan->id;
-    
-    //notadinas1
-    $NotaDinasdariKPAkePPK = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
-    ->where('jadwals.kegiatan', '=', 'Nota Dinas dari KPA ke PPK')
-    ->get();
-    //notadinas2
-    $NotaDinasdariPPKkePejabatPengadaan = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
-    ->where('jadwals.kegiatan', '=', 'Nota Dinas dari PPK ke Pejabat Pengadaan + Lampiran OE (HPS)')
-    ->get();
-    //undangan_persiapan
-    $SuratUndanganPengambilanDokumenKualifikasidanDokumenPengadaanLangsungkepadaPenyediaBarangJasa = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
-    ->where('jadwals.kegiatan', '=', 'Surat Undangan, Pengambilan Dokumen Kualifikasi dan Dokumen Pengadaan Langsung kepada Penyedia Barang/Jasa')
-    ->get();
-    //pakta_integritas
-    $PaktaIntegritas = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
-    ->where('jadwals.kegiatan', '=', 'Pakta Integritas')
-    ->get();
-    //surat pernyataan minat
-    //pemasukkan dokumen
-    //daftar hadir
-    $DaftarHadir = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
-    ->where('jadwals.kegiatan', '=', 'Daftar Hadir Pengembalian Dokumen Prakualifikasi')
-    ->get();
-    //ba_evaluasi
-    $BAEvaluasi = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
-    ->where('jadwals.kegiatan', '=', 'BA. Evaluasi Dokumen Prakualifikasi')
-    ->get();
-    //lampiran_ba_evaluasi
-    $LampiranBAEvaluasi = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
-    ->where('jadwals.kegiatan', '=', 'Lampiran BA. Evaluasi Dokumen Prakualifikasi')
-    ->get();
-    //undangan_penawaran
-    $SuratUndanganPermintaanPenawaranHarga = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
-    ->where('jadwals.kegiatan', '=', 'Surat Undangan Permintaan Penawaran Harga')
-    ->get();
-    //ba_pekerjaan
-    $BAPenjelasanPekerjaan = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
-    ->where('jadwals.kegiatan', '=', 'BA. Penjelasan Pekerjaan')
-    ->get();
-    //Pemasukan Penawaran
-    //ba_penawaran
-    $BAPembukaanPenawaran = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
-    ->where('jadwals.kegiatan', '=', 'BA. Pembukaan Penawaran')
-    ->get();
-    //undagan_nego
-    $SuratUndanganKlarifikasiNegosiasi = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
-    ->where('jadwals.kegiatan', '=', 'Surat Undangan Klarifikasi/Negosiasi')
-    ->get();
-    //ba_nego
-    $BAKlarifikasiNegosiasi = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
-    ->where('jadwals.kegiatan', '=', 'BA. Klarifikasi/Negosiasi')
-    ->get();
-    //Lampiran BA. Klarifikasi/Negosiasi
-    //BA. Hasil Pengadaan Langsung
-    //penetapan_penyedia
-    $PenetapanPenyediaJasa = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
-    ->where('jadwals.kegiatan', '=', 'Penetapan Penyedia Jasa')
-    ->get();
-    
-    $BeritaAcaraHasilPengadaanLangsung = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
-    ->where('jadwals.kegiatan', '=', 'BA. Hasil Pengadaan Langsung')
-    ->get();
+$png = $pengadaan->id;
+
+//notadinas1
+$NotaDinasdariKPAkePPK = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
+->where('jadwals.kegiatan', '=', 'Nota Dinas dari KPA ke PPK')
+->get();
+//notadinas2
+$NotaDinasdariPPKkePejabatPengadaan = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
+->where('jadwals.kegiatan', '=', 'Nota Dinas dari PPK ke Pejabat Pengadaan + Lampiran OE (HPS)')
+->get();
+$SuratUndanganPengambilanDokumenKualifikasidanDokumenPengadaanLangsungkepadaPenyediaBarangJasa = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
+->where('jadwals.kegiatan', '=', 'Surat Undangan, Pengambilan Dokumen Kualifikasi dan Dokumen Pengadaan Langsung kepada Penyedia Barang/Jasa')
+->get();
+$PaktaIntegritas = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
+->where('jadwals.kegiatan', '=', 'Pakta Integritas')
+->get();
+$DaftarHadir = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
+->where('jadwals.kegiatan', '=', 'Daftar Hadir Pengembalian Dokumen Prakualifikasi')
+->get();
+$BAEvaluasi = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
+->where('jadwals.kegiatan', '=', 'BA. Evaluasi Dokumen Prakualifikasi')
+->get();
+$LampiranBAEvaluasi = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
+->where('jadwals.kegiatan', '=', 'Lampiran BA. Evaluasi Dokumen Prakualifikasi')
+->get();
+$SuratUndanganPermintaanPenawaranHarga = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
+->where('jadwals.kegiatan', '=', 'Surat Undangan Permintaan Penawaran Harga')
+->get();
+$BAPenjelasanPekerjaan = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
+->where('jadwals.kegiatan', '=', 'BA. Penjelasan Pekerjaan')
+->get();
 @endphp
 {{-- nota dinas 1 --}}
 <div class="col-12 grid-margin stretch-card">
@@ -106,7 +74,7 @@
                         <td style="vertical-align:top">:</td>
                         <td width="480">Yth. Sdr. Pejabat Pembuat Komitmen Dinas Komunikasi dan Informatika Provinsi Jawa Timur</td>
                     </tr>
-        
+
                     <tr>
                         <td>Dari</td>
                         <td>:</td>
@@ -116,12 +84,12 @@
                         <td>Tanggal</td>
                         <td>:</td>
                         {{-- <td>{{$jadwal}}</td> --}}
-                            
+
                         {{-- <td>{{$NotaDinasdariKPAkePPK->tanggal}}</td> --}}
                         <td>{{$NotaDinasdariKPAkePPK->tanggal->isoFormat('D MMMM Y')}}</td>
                         {{-- <td>{{$NotaDinasdariKPAkePPK->tanggal->format('l, d F Y H:i')}}</td>
                         <td>{{date('d F Y', strtotime($NotaDinasdariKPAkePPK->tanggal))}}</td> --}}
-                        
+
                     </tr>
                     <tr>
                         <td>Nomor</td>
@@ -154,7 +122,7 @@
                 </tr>
             </table>
             <br>
-            <table width="565px" border="1" align="center" >
+            <table width="565px" border="1" align="center">
                 <thead>
                     <tr align="center">
                         {{-- <th width="50px" scope="col">id pengadaan</th> --}}
@@ -167,7 +135,7 @@
                 </thead>
                 <tbody>
                     @foreach ($barang as $brg)
-                    
+
                     <tr>
                         <th>{{$no++}}</th>
                         <!-- <th scope="row">{{$brg->pengadaan_id}}</th> -->
@@ -209,7 +177,7 @@
                             <u> {{$pjb->kuasa_pengguna_anggaran}}</u>
                             <br>
                             NIP. {{$pjb->nip_kuasa_pengguna}}
-        
+
                         </td>
                     </tr>
                     @endforeach
@@ -617,7 +585,7 @@
             <br>
             <table border="0" align="center">
                 <tr>
-                    <td width="25" >2.</td>
+                    <td width="25">2.</td>
                     <td width="260">{{$pjb->pejabat_pengadaan}}</td>
                     {{-- <td width="260">ADI KURNIAWAN.S.Kom.,M.Kom</td> --}}
                     <td>:</td>
@@ -665,19 +633,19 @@
             {{-- <table border="1" align="center">
                 <tr>
                     <td> --}}
-                        <center>
-                            <font size="3"><b>DAFTAR HADIR</b></font><br><br>
-                            @foreach ($DaftarHadir as $DaftarHadir)
-                            <font size="3"><b>PENGEMBALIAN DOKUMEN PRAKUALIFIKASI</b></font><br>
-                            <font size="2"><b>{{$DaftarHadir->pengadaan->jenis_pengadaan}}</b></font><br>
-                            <!-- <font size="2"><b>Statistik Sektoral Toner Printer</b></font><br> -->
-                        </center>
-                    {{-- </td>
+            <center>
+                <font size="3"><b>DAFTAR HADIR</b></font><br><br>
+                @foreach ($DaftarHadir as $DaftarHadir)
+                <font size="3"><b>PENGEMBALIAN DOKUMEN PRAKUALIFIKASI</b></font><br>
+                <font size="2"><b>{{$DaftarHadir->pengadaan->jenis_pengadaan}}</b></font><br>
+                <!-- <font size="2"><b>Statistik Sektoral Toner Printer</b></font><br> -->
+            </center>
+            {{-- </td>
                 </tr>
             </table> --}}
             <br>
             <br>
-            <table width="685" border="1" align="center" >
+            <table width="685" border="1" align="center">
                 <thead style="background-color: lightgrey;">
                     <tr align="center">
                         <th width="30px" scope="col">No</th>
@@ -703,7 +671,7 @@
                         <td></td>
                     </tr>
                     <tr height="100">
-                        <td >1</td>
+                        <td>1</td>
                         <td>{{$DaftarHadir->pengadaan->pelaksana->pt_pelaksana}}</td>
                         <td>{{$DaftarHadir->pengadaan->pelaksana->alamat}}</td>
                         <td>{{$DaftarHadir->tanggal->isoFormat('D MMMM Y')}}</td>
@@ -912,19 +880,19 @@
             <br>
             <table style="width:100%; text-align: center" border="1" font-size="0">
                 <tr>
-                    <td rowspan="3" > NO </td>
-                    <td rowspan="3" > Nama Perusahaan </td>
-                    <td rowspan="3" > Surat Pernyataan Minat </td>
-                    <td rowspan="3" > Pakta Integritas </td>
-                    <td colspan="8" > Formulir Isian Penilaian Kualifikasi </td>
-                    <td rowspan="3" > Keterangan </td>
+                    <td rowspan="3"> NO </td>
+                    <td rowspan="3"> Nama Perusahaan </td>
+                    <td rowspan="3"> Surat Pernyataan Minat </td>
+                    <td rowspan="3"> Pakta Integritas </td>
+                    <td colspan="8"> Formulir Isian Penilaian Kualifikasi </td>
+                    <td rowspan="3"> Keterangan </td>
                 </tr>
                 <tr>
-                    <td rowspan="2" > Data Administras </td>
-                    <td rowspan="2" > Ijin Usaha </td>
-                    <td rowspan="2" > Landasan Hukum Pendirian BU </td>
-                    <td rowspan="2" > Pengurus </td>
-                    <td colspan="4" > P a j a k </td>
+                    <td rowspan="2"> Data Administras </td>
+                    <td rowspan="2"> Ijin Usaha </td>
+                    <td rowspan="2"> Landasan Hukum Pendirian BU </td>
+                    <td rowspan="2"> Pengurus </td>
+                    <td colspan="4"> P a j a k </td>
                 </tr>
                 <tr>
                     <td> NPWP dan PKP </td>
@@ -948,19 +916,19 @@
                     <td> 13 </td>
                 </tr>
                 <tr>
-                    <td rowspan="2" > 1 </td>
-                    <td rowspan="2" > {{$LampiranBAEvaluasi->pengadaan->pelaksana->pt_pelaksana}} </td>
-                    <td rowspan="2" > <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/tCSLJGtT/check.jpg' width="50" height="30" border='0' alt='check'/></a> </td>
-                    <td rowspan="2" > <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/tCSLJGtT/check.jpg' width="50" height="30" border='0' alt='check'/></a> </td>
-                    <td rowspan="2" > <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/tCSLJGtT/check.jpg' width="50" height="30" border='0' alt='check'/></a> </td>
-                    <td rowspan="2" > <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/tCSLJGtT/check.jpg' width="50" height="30" border='0' alt='check'/></a> </td>
-                    <td rowspan="2" > <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/tCSLJGtT/check.jpg' width="50" height="30" border='0' alt='check'/></a> </td>
-                    <td rowspan="2" > <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/tCSLJGtT/check.jpg' width="50" height="30" border='0' alt='check'/></a> </td>
-                    <td rowspan="2" > <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/tCSLJGtT/check.jpg' width="50" height="30" border='0' alt='check'/></a> </td>
-                    <td rowspan="2" > <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/tCSLJGtT/check.jpg' width="50" height="30" border='0' alt='check'/></a> </td>
-                    <td rowspan="2" > <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/tCSLJGtT/check.jpg' width="50" height="30" border='0' alt='check'/></a> </td>
-                    <td rowspan="2" > <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/tCSLJGtT/check.jpg' width="50" height="30" border='0' alt='check'/></a> </td>
-                    <td rowspan="2" > LULUS </td>
+                    <td rowspan="2"> 1 </td>
+                    <td rowspan="2"> {{$LampiranBAEvaluasi->pengadaan->pelaksana->pt_pelaksana}} </td>
+                    <td rowspan="2"> <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/tCSLJGtT/check.jpg' width="50" height="30" border='0' alt='check' /></a> </td>
+                    <td rowspan="2"> <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/tCSLJGtT/check.jpg' width="50" height="30" border='0' alt='check' /></a> </td>
+                    <td rowspan="2"> <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/tCSLJGtT/check.jpg' width="50" height="30" border='0' alt='check' /></a> </td>
+                    <td rowspan="2"> <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/tCSLJGtT/check.jpg' width="50" height="30" border='0' alt='check' /></a> </td>
+                    <td rowspan="2"> <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/tCSLJGtT/check.jpg' width="50" height="30" border='0' alt='check' /></a> </td>
+                    <td rowspan="2"> <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/tCSLJGtT/check.jpg' width="50" height="30" border='0' alt='check' /></a> </td>
+                    <td rowspan="2"> <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/tCSLJGtT/check.jpg' width="50" height="30" border='0' alt='check' /></a> </td>
+                    <td rowspan="2"> <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/tCSLJGtT/check.jpg' width="50" height="30" border='0' alt='check' /></a> </td>
+                    <td rowspan="2"> <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/tCSLJGtT/check.jpg' width="50" height="30" border='0' alt='check' /></a> </td>
+                    <td rowspan="2"> <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/tCSLJGtT/check.jpg' width="50" height="30" border='0' alt='check' /></a> </td>
+                    <td rowspan="2"> LULUS </td>
                 </tr>
             </table>
             <br>
@@ -970,39 +938,39 @@
                     <td><b>:</b></td>
                 </tr>
                 <tr>
-                    <td><a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/tCSLJGtT/check.jpg' width="50" height="30" border='0' alt='check'/></a></td>
+                    <td><a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/tCSLJGtT/check.jpg' width="50" height="30" border='0' alt='check' /></a></td>
                     <td>.............</td>
                     <td>Persyaratan dipenuhi</td>
                 </tr>
                 <tr>
-                    <td><a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/3JTQq0gH/minus.jpg' width="50" height="30" border='0' alt='minus'/></a></td>
+                    <td><a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/3JTQq0gH/minus.jpg' width="50" height="30" border='0' alt='minus' /></a></td>
                     <td>.............</td>
                     <td>Persyaratan belum dipenuhi</td>
                 </tr>
             </table>
             <br>
             <br><br><br>
-                <table border="0" >
-                    <tr>
-                        <td width="600"></td>
-                        <td width="600" style="text-align:center ">PEJABAT PENGADAAN</td>
-                    </tr>
-                </table>
-                <br>
-                <br>
-                <br>
-                <br>
-                <table style="text-align:center;">
-                    <tr>
-                        <td width="600"></td>
-                        <td width="600" style="text-align: center">
-                            <!-- <u> Dra. Ec. NIRMALA DEWI, M.M</u> -->
-                            <u> {{$pjb->pejabat_pengadaan}}</u>
-                            <br>
-                            NIP. {{$pjb->nip_pejabat_pengadaan}}
-                        </td>
-                    </tr>
-                </table>
+            <table border="0">
+                <tr>
+                    <td width="600"></td>
+                    <td width="600" style="text-align:center ">PEJABAT PENGADAAN</td>
+                </tr>
+            </table>
+            <br>
+            <br>
+            <br>
+            <br>
+            <table style="text-align:center;">
+                <tr>
+                    <td width="600"></td>
+                    <td width="600" style="text-align: center">
+                        <!-- <u> Dra. Ec. NIRMALA DEWI, M.M</u> -->
+                        <u> {{$pjb->pejabat_pengadaan}}</u>
+                        <br>
+                        NIP. {{$pjb->nip_pejabat_pengadaan}}
+                    </td>
+                </tr>
+            </table>
             @endforeach
         </div>
     </div>
@@ -1032,55 +1000,55 @@
                     </td>
                 </tr>
             </table>
-                @foreach ($SuratUndanganPermintaanPenawaranHarga as $SuratUndanganPermintaanPenawaranHarga)
-                <table border="0" align="center">
-                    <tr>
-                        <td width="270"> </td>
-                        <!-- diubah. menggunakan kolom craete at tapi aku blm bisa ngubahnya -->
-                        <td>Surabaya, {{$SuratUndanganPermintaanPenawaranHarga->tanggal->isoFormat('D MMMM Y')}}</td>
-                        <td width="50"> </td>
-                    </tr>
-                    <tr>
-                        <td width="270"> </td>
-                        <td>Kepada</td>
-                        <td width="50"> </td>
-                    </tr>
-                </table>
-                <br>
-                <table border="0" align="center" font-size="2">
-                    <tr>
-                        <td width="80">Nomor</td>
-                        <td>:</td>
-                        <!-- diubah -->
-                        <td width="250">020/{{$SuratUndanganPermintaanPenawaranHarga->nomor}}/114.6/{{$SuratUndanganPermintaanPenawaranHarga->tanggal->isoFormat('Y')}}</td>
-                        <td width="80">Yth. Sdr. </td>
-                        <!-- diubah -->
-                        <td width="250">{{$SuratUndanganPermintaanPenawaranHarga->pengadaan->pelaksana->jabatan_pelaksana}} {{$SuratUndanganPermintaanPenawaranHarga->pengadaan->pelaksana->pt_pelaksana}}</td>
-                    </tr>
-                    <tr>
-                        <td width="80">Sifat</td>
-                        <td>:</td>
-                        <td width="175">Segera</td>
-                        <td> </td>
-                        <!-- diubah -->
-                        <td>{{$SuratUndanganPermintaanPenawaranHarga->pengadaan->pelaksana->alamat}}</td>
-                    </tr>
-                    <tr>
-                        <td width="80">Lampiran</td>
-                        <td>:</td>
-                        <td width="175">-</td>
-                        <td> </td>
-                        <td>di</td>
-                    </tr>
-                    <tr>
-                        <td width="80">Perihal</td>
-                        <td>:</td>
-                        <td width="175">Undangan Permintaan <br><u> Penawaran Harga</u>
-                        </td>
-                        <td></td>
-                        <td><u><b>{{$SuratUndanganPermintaanPenawaranHarga->pengadaan->pelaksana->kota}}</b></u></td>
-                    </tr>
-                </table>
+            @foreach ($SuratUndanganPermintaanPenawaranHarga as $SuratUndanganPermintaanPenawaranHarga)
+            <table border="0" align="center">
+                <tr>
+                    <td width="270"> </td>
+                    <!-- diubah. menggunakan kolom craete at tapi aku blm bisa ngubahnya -->
+                    <td>Surabaya, {{$SuratUndanganPermintaanPenawaranHarga->tanggal->isoFormat('D MMMM Y')}}</td>
+                    <td width="50"> </td>
+                </tr>
+                <tr>
+                    <td width="270"> </td>
+                    <td>Kepada</td>
+                    <td width="50"> </td>
+                </tr>
+            </table>
+            <br>
+            <table border="0" align="center" font-size="2">
+                <tr>
+                    <td width="80">Nomor</td>
+                    <td>:</td>
+                    <!-- diubah -->
+                    <td width="250">020/{{$SuratUndanganPermintaanPenawaranHarga->nomor}}/114.6/{{$SuratUndanganPermintaanPenawaranHarga->tanggal->isoFormat('Y')}}</td>
+                    <td width="80">Yth. Sdr. </td>
+                    <!-- diubah -->
+                    <td width="250">{{$SuratUndanganPermintaanPenawaranHarga->pengadaan->pelaksana->jabatan_pelaksana}} {{$SuratUndanganPermintaanPenawaranHarga->pengadaan->pelaksana->pt_pelaksana}}</td>
+                </tr>
+                <tr>
+                    <td width="80">Sifat</td>
+                    <td>:</td>
+                    <td width="175">Segera</td>
+                    <td> </td>
+                    <!-- diubah -->
+                    <td>{{$SuratUndanganPermintaanPenawaranHarga->pengadaan->pelaksana->alamat}}</td>
+                </tr>
+                <tr>
+                    <td width="80">Lampiran</td>
+                    <td>:</td>
+                    <td width="175">-</td>
+                    <td> </td>
+                    <td>di</td>
+                </tr>
+                <tr>
+                    <td width="80">Perihal</td>
+                    <td>:</td>
+                    <td width="175">Undangan Permintaan <br><u> Penawaran Harga</u>
+                    </td>
+                    <td></td>
+                    <td><u><b>{{$SuratUndanganPermintaanPenawaranHarga->pengadaan->pelaksana->kota}}</b></u></td>
+                </tr>
+            </table>
             <br>
             <table border="0" align="center" font-size="2">
                 <tr>
@@ -1168,12 +1136,12 @@
                 <br>
                 <table border="0" align="center" width="650">
                     <tr>
-                        <td  width="325"> </td>
-                        <td  width="325" align="center"><u>{{$pjb->pejabat_pengadaan}}</u></td>
+                        <td width="325"> </td>
+                        <td width="325" align="center"><u>{{$pjb->pejabat_pengadaan}}</u></td>
                     </tr>
                     <tr>
-                        <td  width="325"> </td>
-                        <td  width="325" align="center">NIP. {{$pjb->nip_pejabat_pengadaan}}</td>
+                        <td width="325"> </td>
+                        <td width="325" align="center">NIP. {{$pjb->nip_pejabat_pengadaan}}</td>
                     </tr>
                 </table>
             </div>
@@ -1228,7 +1196,7 @@
             <br>
             <table border="0" align="center" font-size="2">
                 <tr>
-                    <td width="670" style="text-indent: 45px; text-align: justify;">Pada hari ini {{$BAPenjelasanPekerjaan->tanggal->isoFormat('dddd')}} Tanggal {{$BAPenjelasanPekerjaan->deskripsi_tgl}}, dimulai pukul 10.00 WIB sampai dengan selesai, Pejabat Pengadaan di Lingkungan Dinas Komunikasi dan Informatika Provinsi Jawa Timur yang dibentuk dengan Keputusan Kepala Dinas Komunikasi Dan Informatika Provinsi Jawa Timur tanggal {{$pjb->tanggal_sk->isoFormat('D MMMM Y')}} Nomor : {{$pjb->nomor_sk}}, telah mengadakan rapat penjelasan untuk pengadaan {{$BAPenjelasanPekerjaan->pengadaan->jenis_pengadaan}} keperluan Dinas Komunikasi dan Informatika Provinsi Jawa Timur.</td>
+                    <td width="670" style="text-indent: 45px; text-align: justify;">Pada hari ini {{$BAPenjelasanPekerjaan->tanggal->isoFormat('dddd')}} Tanggal {{$BAPenjelasanPekerjaan->deskripsi_tgl}}, dimulai pukul 10.00 WIB sampai dengan selesai, Pejabat Pengadaan di Lingkungan Dinas Komunikasi dan Informatika Provinsi Jawa Timur yang dibentuk dengan Keputusan Kepala Dinas Komunikasi Dan Informatika Provinsi Jawa Timur tanggal @foreach ($pejabat as $pejabat) {{$pejabat->tanggal_sk->isoFormat('D MMMM Y')}} Nomor : {{$pejabat->nomor_sk}}@endforeach , telah mengadakan rapat penjelasan untuk pengadaan {{$BAPenjelasanPekerjaan->pengadaan->jenis_pengadaan}} keperluan Dinas Komunikasi dan Informatika Provinsi Jawa Timur.</td>
                 </tr>
             </table>
             <br>
@@ -1489,1131 +1457,15 @@
     </div>
 </div>
 {{-- ba penawaran --}}
-<div class="col-12 grid-margin stretch-card">
-    <div class="card shadow">
-        <div class="card-body">
-            <table border="0" align="center">
-                <tr>
-                    <td>
-                        <img src="{{asset('img/logo_jatim.png')}}" width="70" height="70">
-                    </td>
-                    <td>
-                        <center>
-                            <font size="3"><b>PEMERINTAH PROVINSI JAWA TIMUR</b></font><br>
-                            <font size="3">DINAS KOMUNIKASI DAN INFORMATIKA</font><br>
-                            <font size="3">Jl. Ahmad Yani 242-244 Telp. (031) 8294608 Fax. (031) 8294517</font><br>
-                            <font size="3">Website : http://www.jatimprov.go.id </font><br>
-                            <font size="2">Email:kominfo@jatimprov.go.id</font><br>
-                            <font size="3">S U R A B A Y A-60235</font><br>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <hr>
-                    </td>
-                </tr>
-            </table>
-            <table border="0" align="center">
-                <tr>
-                    <td width="560">
-                        <center><b>BERITA ACARA PEMBUKAAN PENAWARAN</b>
-                    </td>
-                <tr>
-            </table>
-            @foreach ($BAPembukaanPenawaran as $BAPembukaanPenawaran)
-            <table border="0" align="center">
-                <tr>
-                    <td width="50">
-                        <center>
-                            <font size="2">Nomor</font>
-                    </td>
-                    <td>
-                        <center>
-                            <font size="2">:</font>
-                    </td>
-                    <td width="150">
-                        <center>
-                            <font size="2">020/{{$BAPembukaanPenawaran->nomor}}/114.6/{{$BAPembukaanPenawaran->tanggal->isoFormat('Y')}}</font>
-                    </td>
-                <tr>
-            </table>
-            <br>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="700" style="text-indent: 45px; text-align: justify;">Pada hari ini {{$BAPembukaanPenawaran->tanggal->isoFormat('dddd')}} Tanggal {{$BAPembukaanPenawaran->deskripsi_tgl}} kami yang bertanda tangan dibawah ini adalah Pejabat Pengadaan di Lingkungan Dinas Komunikasi Dan Informatika Provinsi Jawa Timur yang dibentuk dengan Keputusan Kepala Dinas Komunikasi Dan Informatika Provinsi Jawa Timur selaku Pengguna Anggaran tanggal {{$pjb->tanggal_sk->isoFormat('D MMMM Y')}} Nomor : {{$pjb->nomor_sk}}, melaksanakan Pembukaan Penawaran untuk pelaksanaan {{$BAPembukaanPenawaran->pengadaan->jenis_pengadaan}}, dibiayai dari dana APBD Tahun Anggaran {{$BAPembukaanPenawaran->tanggal->isoFormat('Y')}} pada DPA Dinas Komunikasi dan Informatika Provinsi Jawa Timur Kode Rekening {{$BAPembukaanPenawaran->pengadaan->pelaksana->kode_rekening}} dengan Harga Perkiraan Sendiri (HPS) sebesar Rp. {{number_format( $BAPembukaanPenawaran->pengadaan->total_hps)}},- ({{$BAPembukaanPenawaran->pengadaan->deskripsi_hps}}).</td>
-                </tr>
-            </table>
-            <br>
-            <table border="0" align="center" >
-                <tr>
-                    <td width="30" style="vertical-align:top"><b>I.</b></td>
-                    <td colspan="4" style="vertical-align:top"><b>Personalia dan organisasi rapat :</b></td>
-                <tr>
-                <tr>
-                    <td width="30" style="vertical-align:top"> </td>
-                    <td width="200" style="vertical-align:top" colspan="2">Rapat dipimpin oleh</td>
-                    <td style="vertical-align:top">:</td>
-                    <td width="380" style="vertical-align:top">{{$pjb->pejabat_pengadaan}}</td>
-                </tr>
-                <tr>
-                    <td width="30"> </td>
-                    <td width="200" style="vertical-align:top" colspan="2">Jabatan</td>
-                    <td style="vertical-align:top">:</td>
-                    <td width="380" style="vertical-align:top">Pejabat Pengadaan Barang/Jasa di lingkungan Dinas Komunikasi dan Informatika Provinsi Jawa Timur Tahun Anggaran {{$BAPembukaanPenawaran->tanggal->isoFormat('Y')}}</td>
-                </tr>
-                <tr>
-                    <td width="30"> </td>
-                    <td width="130" colspan="4">dan dihadiri oleh:</td>
-                    {{-- <td width="540"> </td> --}}
-                </tr>
-                <tr>
-                    <td width="30"> </td>
-                    <td width="35">A.</td>
-                    <td colspan="3">PPK:</td>
-                    {{-- <td width="602"> </td> --}}
-                </tr>
-                <tr>
-                    <td width="30"> </td>
-                    <td width="35"> </td>
-                    <td width="250" style="vertical-align:top">{{$pjb->pejabat_pembuatan_komitmen}}</td>
-                    <td style="vertical-align:top">:</td>
-                    <td width="380" style="text-align: justify; vertical-align:top">Pejabat Pembuat Komitmen di lingkungan Dinas Komunikasi dan Informatika Provinsi Jawa Timur Tahun Anggaran {{$BAPembukaanPenawaran->tanggal->isoFormat('Y')}}</td>
-                </tr>
-                <tr>
-                    <td width="30"> </td>
-                    <td width="35" style="vertical-align:top">B.</td>
-                    <td style="vertical-align:top" colspan="3">Penyedia Barang/Jasa:</td>
-                    {{-- <td width="480"> </td> --}}
-                </tr>
-                <tr>
-                    <td width="30"> </td>
-                    <td width="35">1.</td>
-                    <td width="250">{{$BAPembukaanPenawaran->pengadaan->pelaksana->pt_pelaksana}}</td>
-                    <td style="text-align: justify; vertical-align:top">:</td>
-                    <td width="380">{{$BAPembukaanPenawaran->pengadaan->pelaksana->nama_pelaksana}}</td>
-                </tr>
-            </table>
-            <br>
-            <table border="0" align="center">
-                <tr>
-                    <td width="30"><b>II.</b></td>
-                    <td width="670"><b>Hasil Pembukaan Penawaran sebagai berikut :</b></td>
-                <tr>
-                <tr>
-                    <td width="30"></td>
-                    <td>
-                        <table width="670" border="1" align="center">
-                            <thead style="background-color: lightgrey;">
-                                <tr align="center">
-                                    <th width="30px" scope="col">No</th>
-                                    <th width="350px" scope="col">Nama Perusahaan</th>
-                                    <th width="95px" scope="col">Surat Penawaran</th>
-                                    <th width="95px" scope="col">Dokumen Teknis</th>
-                                    <th width="95px" scope="col">Keterangan</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr align="center" height="100">
-                                    <td scope="row">1</td>
-                                    <td>{{$BAPembukaanPenawaran->pengadaan->pelaksana->pt_pelaksana}}</td>
-                                    <td>Ada</td>
-                                    <td>Ada</td>
-                                    <td>Lengkap</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-            <br>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="700" style="text-indent: 45px; text-align: justify;">Demikian Berita Acara ini dibuat untuk dipergunakan sebagai bahan pertimbangan dalam pelaksanaan Pengadaan Langsung.</td>
-                </tr>
-            </table>
-            <br>
-            <table border="0" align="center">
-                <tr>
-                    <td width="510"> </td>
-                    <td>PEJABAT PENGADAAN</td>
-                    <td width="50"> </td>
-                </tr>
-            </table>
-            <br>
-            <br>
-            <br>
-                <table border="0" align="center">
-                    <tr>
-                        <td width="500"> </td>
-                        <td width="260"><u>{{$pjb->pejabat_pengadaan}}</u></td>
-                    </tr>
-                    <tr>
-                        <td width="480"> </td>
-                        <td>NIP. {{$pjb->nip_pejabat_pengadaan}}</td>
-                    </tr>
-                </table>
-            @endforeach
-        </div>
-    </div>
-</div>
+
 {{-- undagan_nego --}}
-<div class="col-12 grid-margin stretch-card">
-    <div class="card shadow">
-        <div class="card-body">
-            <table border="0" align="center">
-                <tr>
-                    <td>
-                        <img src="{{asset('img/logo_jatim.png')}}" width="70" height="70">
-                    </td>
-                    <td>
-                        <center>
-                            <font size="3"><b>PEMERINTAH PROVINSI JAWA TIMUR</b></font><br>
-                            <font size="3">DINAS KOMUNIKASI DAN INFORMATIKA</font><br>
-                            <font size="3">Jl. Ahmad Yani 242-244 Telp. (031) 8294608 Fax. (031) 8294517</font><br>
-                            <font size="3">Website : http://www.jatimprov.go.id </font><br>
-                            <font size="2">Email:kominfo@jatimprov.go.id</font><br>
-                            <font size="3">S U R A B A Y A-60235</font><br>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <hr>
-                    </td>
-                </tr>
-            </table>
-            @foreach ($SuratUndanganKlarifikasiNegosiasi as $SuratUndanganKlarifikasiNegosiasi)
-            <table border="0" align="center">
-                <tr>
-                    <td width="270"> </td>
-                    <!-- diubah. menggunakan kolom craete at tapi aku blm bisa ngubahnya -->
-                    <td>Surabaya, {{$SuratUndanganKlarifikasiNegosiasi->created_at->isoFormat('D MMMM Y')}}</td>
-                    <td width="50"> </td>
-                </tr>
-                <tr>
-                    <td width="270"> </td>
-                    <td>Kepada</td>
-                    <td width="50"> </td>
-                </tr>
-            </table>
-            <br>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="80">Nomor</td>
-                    <td>:</td>
-                    <!-- diubah -->
-                    <td width="250">020/{{$SuratUndanganKlarifikasiNegosiasi->nomor}}/114.6/{{$SuratUndanganKlarifikasiNegosiasi->tanggal->isoFormat('Y')}}</td>
-                    <td width="80">Yth. Sdr. </td>
-                    <!-- diubah -->
-                    <td width="250">{{$SuratUndanganKlarifikasiNegosiasi->pengadaan->pelaksana->jabatan_pelaksana}} {{$SuratUndanganKlarifikasiNegosiasi->pengadaan->pelaksana->pt_pelaksana}}</td>
-                </tr>
-                <tr>
-                    <td width="80">Sifat</td>
-                    <td>:</td>
-                    <td width="175">Segera</td>
-                    <td> </td>
-                    <!-- diubah -->
-                    <td>{{$SuratUndanganKlarifikasiNegosiasi->pengadaan->pelaksana->alamat}}</td>
-                </tr>
-                <tr>
-                    <td width="80">Lampiran</td>
-                    <td>:</td>
-                    <td width="175">-</td>
-                    <td> </td>
-                    <td>di</td>
-                </tr>
-                <tr>
-                    <td width="80">Perihal</td>
-                    <td>:</td>
-                    <td width="175">Undangan <br><u> Klarifikasi/Negosiasi</u></td>
-                    <td></td>
-                    <td><u><b>{{$SuratUndanganKlarifikasiNegosiasi->pengadaan->pelaksana->kota}}</b></u></td>
-                </tr>
-            </table>
 
-            <br>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="670" style="text-indent: 45px; text-align: justify;">Mengharap dengan hormat kehadiran Saudara dalam acara Klarifikasi dan Negosiasi pengadaan {{$SuratUndanganKlarifikasiNegosiasi->pengadaan->jenis_pengadaan}} yang akan diadakan pada :</td>
-                </tr>
-            </table>
-            <br>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="100">Hari</td>
-                    <td width="10">:</td>
-                    <td width="450">{{$SuratUndanganKlarifikasiNegosiasi->tanggal->isoFormat('dddd')}}</td>
-                </tr>
-                <tr>
-                    <td width="100">Tanggal</td>
-                    <td width="10">:</td>
-                    <td width="450">{{$SuratUndanganKlarifikasiNegosiasi->tanggal->isoFormat('D MMMM Y')}}</td>
-                </tr>
-                <tr>
-                    <td width="100">Pukul</td>
-                    <td width="10">:</td>
-                    <td width="450">10.00 WIB</td>
-                </tr>
-                <tr>
-                    <td width="100">Tempat</td>
-                    <td width="10">:</td>
-                    <td width="450">Ruang Argopuro Dinas Komunikasi Dan Informatika Provinsi</td>
-                </tr>
-                <tr>
-                    <td width="100"> </td>
-                    <td width="10"> </td>
-                    <td width="450">Jawa Timur Jl. Ahmad Yani 242 - 244 Surabaya</td>
-                </tr>
-            </table>
-            <br>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="560">Demikian untuk menjadikan periksa.</td>
-                </tr>
-            </table>
-            <br>
-            <table border="0" align="center">
-                <tr>
-                    <td width="470"> </td>
-                    <td width="250" align="center">PEJABAT PENGADAAN</td>
-                </tr>
-            </table>
-            <br>
-            <br>
-            <br>
-                <table border="0" align="center">
-                    <tr>
-                        <td width="470"> </td>
-                        <td width="250" align="center"><u>{{$pjb->pejabat_pengadaan}}</u></td>
-                    </tr>
-                    <tr>
-                        <td width="470"> </td>
-                        <td align="center">NIP. {{$pjb->nip_pejabat_pengadaan}}</td>
-                    </tr>
-                </table>
-            @endforeach
-        </div>
-    </div>
-</div>
 {{-- ba_nego.blade --}}
-<div class="col-12 grid-margin stretch-card">
-    <div class="card shadow">
-        <div class="card-body">
-            <table border="0" align="center">
-                <tr>
-                    <td>
-                        <img src="{{asset('img/logo_jatim.png')}}" width="70" height="70">
-                    </td>
-                    <td>
-                        <center>
-                            <font size="3"><b>PEMERINTAH PROVINSI JAWA TIMUR</b></font><br>
-                            <font size="3">DINAS KOMUNIKASI DAN INFORMATIKA</font><br>
-                            <font size="3">Jl. Ahmad Yani 242-244 Telp. (031) 8294608 Fax. (031) 8294517</font><br>
-                            <font size="3">Website : http://www.jatimprov.go.id </font><br>
-                            <font size="2">Email:kominfo@jatimprov.go.id</font><br>
-                            <font size="3">S U R A B A Y A-60235</font><br>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <hr>
-                    </td>
-                </tr>
-            </table>
-            <table border="0" align="center">
-                <tr>
-                    <td width="560">
-                        <center><b>BERITA ACARA KLARIFIKASI / NEGOSIASI</b>
-                    </td>
-                <tr>
-            </table>
-            @foreach ($BAKlarifikasiNegosiasi as $BAKlarifikasiNegosiasi)
-            <table border="0" align="center">
-                <tr>
-                    <td width="50">
-                        <center>
-                            <font size="2">Nomor</font>
-                    </td>
-                    <td>
-                        <center>
-                            <font size="2">:</font>
-                    </td>
-                    <td width="150">
-                        <center>
-                            <font size="2">020/{{$BAKlarifikasiNegosiasi->nomor}}/114.6/{{$BAKlarifikasiNegosiasi->tanggal->isoFormat('Y')}}</font>
-                    </td>
-                <tr>
-            </table>
-            <br>
-            <table border="0" align="center" font-size="2">
-                
-                <tr>
-                    <td width="560" style="text-indent: 45px; text-align:justify;">Pada hari ini {{$BAKlarifikasiNegosiasi->tanggal->isoFormat('dddd')}}, Tanggal {{$BAKlarifikasiNegosiasi->deskripsi_tanggal}} kami yang bertanda tangan dibawah ini adalah Pejabat Pengadaan di Lingkungan Dinas Komunikasi Dan Informatika Provinsi Jawa Timur yang dibentuk dengan Keputusan Kepala Dinas Komunikasi Dan Informatika Provinsi Jawa Timur selaku Pengguna Anggaran tanggal {{date('d F Y', strtotime($pjb->tanggal))}} Nomor : {{$pjb->nomor_sk}}, melaksanakan klarifikasi dan negosiasi untuk pelaksanaan Belanja Alat/Bahan Kapasitas Kelembagaan Statistik Sektoral Toner Printer , dibiayai dari dana APBD Tahun Anggaran {{date('y', strtotime($pjb->tanggal))}} pada DPA Dinas Komunikasi dan Informatika Provinsi Jawa Timur Kode Rekening {{$BAKlarifikasiNegosiasi->pengadaan->kode_rekening}} dengan Harga Perkiraan Sendiri (HPS) sebesar Rp. {{number_format($BAKlarifikasiNegosiasi->pengadaan->total_hps)}},- ({{$BAKlarifikasiNegosiasi->pengadaan->deskripsi_hps}}).
-                    </td>
-                </tr>
-                
-            </table>
-            <br>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="560">Melakukan klarifikasi dan negosiasi terhadap penawaran yang diajukan oleh : {{$BAKlarifikasiNegosiasi->pengadaan->pelaksana->pt_pelaksana}} {{$BAKlarifikasiNegosiasi->pengadaan->pelaksana->alamat}} dengan hasil terlampir.</td>
-                </tr>
-            </table>
-            <br>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="560">Dari hasil klarifikasi dan negosiasi harga, ditetapkan sebagai penyedia yaitu :</td>
-                </tr>
-            </table>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="190">Nama Perusahaan</td>
-                    <td width="10">:</td>
-                    <td width="360">{{$BAKlarifikasiNegosiasi->pengadaan->pelaksana->pt_pelaksana}}</td>
-                </tr>
-            </table>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="190">Nama Penanggung Jawab</td>
-                    <td width="10">:</td>
-                    <td width="360">{{$BAKlarifikasiNegosiasi->pengadaan->pelaksana->nama_pelaksana}}</td>
-                </tr>
-            </table>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="190">Alamat Perusahaan</td>
-                    <td width="10">:</td>
-                    <td width="360">{{$BAKlarifikasiNegosiasi->pengadaan->pelaksana->alamat}}</td>
-                </tr>
-            </table>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="190">Nomor Pokok Wajib Pajak</td>
-                    <td width="10">:</td>
-                    <td width="360">{{$BAKlarifikasiNegosiasi->pengadaan->pelaksana->npwp}}</td>
-                </tr>
-            </table>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="190">Pekerjaan</td>
-                    <td width="10">:</td>
-                    <td width="360">{{ $BAKlarifikasiNegosiasi->pengadaan->jenis_pengadaan}}</td>
-                </tr>
-            </table>
-            {{--  <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="190"> </td>
-                    <td width="10"> </td>
-                    <td width="360">Kelembagaan Statistik Sektoral Toner Printer</td>
-                </tr>
-            </table>  --}}
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="190">Dengan Harga</td>
-                    <td width="10">:</td>
-                    <td width="360">Rp. {{number_format($BAKlarifikasiNegosiasi->pengadaan->total_hps)}},-</td>
-                </tr>
-            </table>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="190"> </td>
-                    <td width="10"> </td>
-                    <td width="360">({{$BAKlarifikasiNegosiasi->pengadaan->deskripsi_hps}})</td>
-                </tr>
-            </table>
-            <br>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="560" style="text-align:justify;">Dengan pertimbangan bahwa spesifikasi teknis sesuai dengan ketentuan dan harga dapat dipertanggung jawabkan dan menguntungkan Pemerintah Provinsi Jawa Timur.</td>
-                </tr>
-            </table>
-            <br>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="560" style="text-indent: 45px; text-align:justify;">Demikian Berita Acara ini dibuat untuk dipergunakan sebagai bahan pertimbangan dalam pelaksanaan pengadaan langsung.</td>
-                </tr>
-            </table>
-            <br>
-            <table border="0" align="center" font-size="2">
-                <tr align="center">
-                    <td width="280">Direktur,</td>
-                    <td width="280">PEJABAT PENGADAAN</td>
-                </tr>
-            </table>
-            <table border="0" align="center" font-size="2">
-                <tr align="center">
-                    <td width="280">{{$BAKlarifikasiNegosiasi->pengadaan->pelaksana->pt_pelaksana}}</td>
-                    {{-- <td width="280">CV. PATRIA NUGRAHA</td> --}}
-                    <td width="280"> </td>
-                </tr>
-            </table>
-            <br>
-            <br>
-            <br>
-            <table border="0" align="center" font-size="2">
-                <tr align="center">
-                    <td width="280"><u>{{$BAKlarifikasiNegosiasi->pengadaan->pelaksana->nama_pelaksana}}</u></td>
-                    <td width="280"><u>{{$pjb->pejabat_pengadaan}}</u></td>
-                    {{-- <td width="280">MANUHUTU ARMAND FX</td>
-                    <td width="280">ADI KURNIAWAN.S.Kom.,M.Kom</td> --}}
-                </tr>
-            </table>
-            <table border="0" align="center" font-size="2">
-                <tr align="center">
-                    <td width="280"> </td>
-                    <td width="280">NIP. {{$pjb->nip_pejabat_pengadaan}}</td>
-                </tr>
-            </table>
-            {{-- @endforeach --}}
-        </div>
-    </div>
-</div>
-<div class="col-12 grid-margin stretch-card">
-    <div class="card shadow">
-        <div class="card-body">
-            <table width="565px" border="1" align="center">
-                <thead>
-                    <tr align="center">
-                        <th colspan="2" width="515px" scope="col">BERITA ACARA HASIL PENGADAAN BARANG</th>
-                    </tr>
-                </thead>
-                {{-- @foreach ($BAKlarifikasiNegosiasi as $BAKlarifikasiNegosiasi) --}}
-                <tbody>
-                    <tr>
-                        <td width="258px" scope="col">PEKERJAAN : {{ $BAKlarifikasiNegosiasi->pengadaan->jenis_pengadaan}}</td>
-                        <td width="258px" scope="col">Nomor : 020/{{$BAKlarifikasiNegosiasi->nomor}}/114.6/2022 Tanggal : {{$BAKlarifikasiNegosiasi->tanggal->isoFormat('D MMMM Y')}}</td>
-                    </tr>
-                </tbody>
-                {{-- @endforeach --}}
-            </table>
-            <br>
-            {{-- @foreach ($BAKlarifikasiNegosiasi as $BAKlarifikasiNegosiasi) --}}
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="565" style="text-align:justify;">Pada hari ini {{$BAKlarifikasiNegosiasi->deskripsi_tanggal}}, dimulai pukul 10.00 WIB sampai dengan selesai, dengan mengambil tempat di Ruang Argopuro Dinas Komunikasi Dan Informatika Provinsi Jawa Timur telah disusun Berita Acara Hasil Pengadaan Langsung untuk Pekerjaan tersebut diatas.</td>
-                </tr>
-            </table>
-            <br>
-            <table border="0" align="center" >
-                <tr>
-                    <td width="30" style="vertical-align:top">I.</td>
-                    <td width="530" style="vertical-align:top; text-align:justify;">Bahwa dalam proses Pengadaan Langsung pengadaan {{ $BAKlarifikasiNegosiasi->pengadaan->jenis_pengadaan}} telah diundang calon penyedia yaitu :</td>
-                <tr>
-            </table>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="65"> </td>
-                    <td width="200" style="vertical-align:top; text-align:justify;">Nama Perusahaan</td>
-                    <td>:</td>
-                    <td width="300" style="vertical-align:top; text-align:justify;">{{$BAKlarifikasiNegosiasi->pengadaan->pelaksana->pt_pelaksana}}</td>
-                </tr>
-            </table>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="65"> </td>
-                    <td width="200">Alamat</td>
-                    <td>:</td>
-                    <td width="300">{{$BAKlarifikasiNegosiasi->pengadaan->pelaksana->alamat}}</td>
-                </tr>
-            </table>
-            <table border="0" align="center">
-                <tr>
-                    <td width="30"> </td>
-                    <td width="530" style="vertical-align:top; text-align:justify;">Setelah dilakukan penilaian kualifikasi/kompetensi badan usaha maka penyedia tersebut dianggap mampu untuk melaksanakan pekerjaan pengadaan langsung tersebut.</td>
-                <tr>
-            </table>
-            <br>
-            <table border="0" align="center">
-                <tr>
-                    <td width="30" style="vertical-align:top; text-align:justify;">II.</td>
-                    <td width="530" style="vertical-align:top; text-align:justify;">Setelah Penyedia menyampaikan penawaran (administrasi, teknis dan harga) maka dilakukan pembukaan penawaran. Dalam pembukaan penawaran diperoleh hasil sebagai berikut :</td>
-                <tr>
-            </table>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="30"> </td>
-                    <td width="530">1.</td>
-                </tr>
-            </table>
-            <table width="500" border="1" align="center" font-size="2">
-                <thead style="width:100%; text-align: center; background-color: lightgrey;">
-                    <tr>
-                        <th colspan="3">PENAWARAN</th>
-                        <th rowspan="3">KETERANGAN</th>
-                    </tr>
-                    <tr>
-                        <th>Administrasi</th>
-                        <th>Teknis</th>
-                        <th>Biaya</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Ada</td>
-                        <td>Ada</td>
-                        <td>Ada</td>
-                        <td>Lengkap</td>
-                    </tr>
-                </tbody>
-            </table>
-            <br>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="35"> </td>
-                    <td width="30" style="vertical-align:top; text-align:justify;">2.</td>
-                    <td width="200" style="vertical-align:top; text-align:justify;">Harga Penawaran</td>
-                    <td style="vertical-align:top; text-align:justify;">:</td>
-                    <td width="300" style="vertical-align:top; text-align:justify;">Rp. {{number_format($BAKlarifikasiNegosiasi->pengadaan->harga_penawaran)}},- <br>{{$BAKlarifikasiNegosiasi->pengadaan->deskripsi_penawaran}}</td>
-                </tr>
-            </table>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="35"> </td>
-                    <td width="30"> </td>
-                    <td width="200" style="vertical-align:top; text-align:justify;">Harga Penawaran setelah Koreksi Aritmatik</td>
-                    <td style="vertical-align:top; text-align:justify;">:</td>
-                    <td width="300" style="vertical-align:top; text-align:justify;">Rp. {{number_format($BAKlarifikasiNegosiasi->pengadaan->harga_penawaran)}},- <br>{{$BAKlarifikasiNegosiasi->pengadaan->deskripsi_penawaran}}</td>
-                </tr>
-            </table>
-            <br>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    {{-- <td width="50"></td> --}}
-                    <td width="560">Selanjutnya dilakukan evaluasi dengan unsur-unsur evaluasi sebagai berikut :</td>
-                </tr>
-            </table>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    {{-- <td width="50"> </td> --}}
-                    <td width="30" style="vertical-align:top; ">1.</td>
-                    <td width="480" style="vertical-align:top; ">Evaluasi Administrasi</td>
-                </tr>
-            </table>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    {{-- <td width="50"> </td> --}}
-                    <td width="30" style="vertical-align:top; text-align:justify;">2.</td>
-                    <td width="480" style="vertical-align:top; text-align:justify;">Evaluasi Teknis</td>
-                </tr>
-            </table>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    {{-- <td width="50"> </td> --}}
-                    <td width="30">3.</td>
-                    <td width="480">Evaluasi Kewajaran Harga</td>
-                </tr>
-            </table>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td></td>
-                </tr>
-                <tr>
-                    {{-- <td width="50"> </td> --}}
-                    <td width="530">Unsur – unsur selengkapnya sebagai berikut :</td>
-                </tr>
-            </table>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="50"> </td>
-                    <td width="30">1.</td>
-                    <td width="480">Evaluasi Administrasi</td>
-                </tr>
-            </table>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="50"> </td>
-                    <td width="30"> </td>
-                    <td width="480">Evaluasi Administrasi meliputi :</td>
-                </tr>
-            </table>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="50"> </td>
-                    <td width="30"> </td>
-                    <td width="30">a.</td>
-                    <td width="450"><b>Surat Penawaran</b></td>
-                </tr>
-            </table>
-            <table width="500" border="1" align="center" font-size="2" style="vertical-align:top; text-align:justify;">
-                <thead style="text-align: center; background-color: lightgrey;">
-                    <tr>
-                        <th width="5">NO</th>
-                        <th width="230">UNSUR YANG DIEVALUASI</th>
-                        <th width="125">KETERANGAN</th>
-                    </tr>
-                </thead>
-                <tbody >
-                    <tr>
-                        <td>1</td>
-                        <td>Syarat-syarat substansial yang diminta berdasarkan Dokumen Pemilihan dipenuhi/dilengkapi</td>
-                        <td style="text-align: center;" style="text-align: center;">Memenuhi Syarat</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Surat Penawaran</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <ul>
-                                <li>
-                                    Ditandatangani oleh yang berhak
-                                </li>
-                            </ul>
-                        </td>
-                        <td style="text-align: center;">Memenuhi Syarat</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <ul>
-                                <li>
-                                    Jangka waktu berlakunya surat penawaran
-                                </li>
-                            </ul>
-                        </td>
-                        <td style="text-align: center;">Memenuhi Syarat</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <ul>
-                                <li>
-                                    Jangka Waktu Pelaksanaan
-                                </li>
-                            </ul>
-                        </td>
-                        <td style="text-align: center;">Memenuhi Syarat</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <ul>
-                                <li>
-                                    Bertanggal
-                                </li>
-                            </ul>
-                        </td>
-                        <td style="text-align: center;">Memenuhi Syarat</td>
-                    </tr>
-                </tbody>
-            </table>
-            {{-- @endforeach --}}
-        </div>
-    </div>
-</div>
-<div class="col-12 grid-margin stretch-card">
-    <div class="card shadow">
-        <div class="card-body">
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="50"> </td>
-                    <td width="30">2.</td>
-                    <td width="480">Evaluasi Teknis</td>
-                </tr>
-            </table>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="50"> </td>
-                    <td width="30"> </td>
-                    <td width="480">Apabila penawaran memenuhi syarat administrasi tersebut diatas dilakukan evaluasi teknis, unsur evaluasi teknis meliputi :</td>
-                </tr>
-            </table>
-            <table width="500" border="1" align="center" font-size="2">
-                <thead style="text-align: center; background-color: lightgrey;">
-                    <tr>
-                        <th width="5">NO</th>
-                        <th width="230">UNSUR YANG DIEVALUASI</th>
-                        <th width="125">KETERANGAN</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Metode pelaksanaan pekerjaan</td>
-                        <td>Memenuhi Syarat</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Jadwal waktu pelaksanaan pekerjaan</td>
-                        <td>Memenuhi Syarat</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Jenis, kapasitas, komposisi dan jumlah peralatan</td>
-                        <td>Memenuhi Syarat</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Spesifikasi teknis</td>
-                        <td>Memenuhi Syarat</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Personil Inti</td>
-                        <td>Memenuhi Syarat</td>
-                    </tr>
-                </tbody>
-            </table>
 
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="50"> </td>
-                    <td width="30">3.</td>
-                    <td width="480">Evaluasi Kewajaran Harga</td>
-                </tr>
-            </table>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="50"> </td>
-                    <td width="30"> </td>
-                    <td width="480">Penawaran yang telah lulus evaluasi teknis dilakukan Evaluasi Kewajaran Harga, yang meliputi :</td>
-                </tr>
-            </table>
-            <table width="500" border="1" align="center" font-size="2">
-                <thead style="text-align: center; background-color: lightgrey;">
-                    <tr>
-                        <th width="5">NO</th>
-                        <th width="230">UNSUR YANG DIEVALUASI</th>
-                        <th width="125">KETERANGAN</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Total harga penawaran tidak melebihi HPS</td>
-                        <td>Memenuhi Syarat</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Harga satuan timpang</td>
-                        <td>Memenuhi Syarat</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Kewajaran harga</td>
-                        <td>Memenuhi Syarat</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <br>
-            <table border="0" align="center">
-                <tr>
-                    <td width="30" style="vertical-align:top;">III.</td>
-                    <td width="530" style="vertical-align:top;">Setelah evaluasi dinyatakan memenuhi syarat maka dilakukan proses Klarifikasi Teknis dan Negosiasi Harga. Dari Hasil Negosiasi harga diperoleh hasil sebagai berikut :</td>
-                <tr>
-            </table>
-            {{-- @foreach ($BAKlarifikasiNegosiasi as $BAKlarifikasiNegosiasi) --}}
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="35"> </td>
-                    <td width="30" style="vertical-align:top;">-</td>
-                    <td width="200" style="vertical-align:top;">Harga Penawaran</td>
-                    <td style="vertical-align:top;">:</td>
-                    <td width="300" style="vertical-align:top;">Rp. Rp. {{number_format($BAKlarifikasiNegosiasi->pengadaan->harga_penawaran)}},-({{$BAKlarifikasiNegosiasi->pengadaan->deskripsi_penawaran}})</td>
-                </tr>
-            </table>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="35"> </td>
-                    <td width="30">-</td>
-                    <td width="200" style="vertical-align:top;">Harga Penawaran setelah Negosiasi</td>
-                    <td style="vertical-align:top;">:</td>
-                    <td width="300" style="vertical-align:top;">Rp. {{number_format($BAKlarifikasiNegosiasi->pengadaan->nilai_negosiasi)}},-({{$BAKlarifikasiNegosiasi->pengadaan->deskripsi_negosiasi}})</td>
-                </tr>
-            </table>
-            <br>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="560">Untuk selanjutnya Berita Acara Hasil Pengadaan Langsung ini akan disampaikan kepada Pejabat Pembuat Komitmen untuk proses pengadaan langsung selanjutnya.</td>
-                </tr>
-            </table>
-            <br>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="560">Demikian Berita Acara Hasil Pengadaan dibuat dengan sebenarnya oleh Pejabat Pengadaan untuk dipergunakan sebagaimana mestinya.</td>
-                </tr>
-            </table>
-            <br>
-            <table border="0" align="center">
-                <tr>
-                    <td>
-                        <center><b>PEJABAT PENGADAAN DI LINGKUNGAN</b><br>
-                            <b>DINAS KOMUNIKASI DAN INFORMATIKA PROVINSI JAWA TIMUR</b><br>
-                    </td>
-                </tr>
-            </table>
-            <br>
-            <table width="565px" border="1" align="center">
-                <thead style="text-align: center; background-color: lightgrey;">
-                    <tr align="center">
-                        <th width="30px" scope="col">No</th>
-                        <th width="240" scope="col">Nama</th>
-                        <th width="145px" scope="col">Jabatan</th>
-                        <th width="100px" scope="col">Tanda Tangan</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr align="center" height="100">
-                        <th scope="row">1</th>
-                        <td>{{$pjb->pejabat_pengadaan}}</td>
-                        <td>Pejabat Pengadaan</td>
-                        <td> </td>
-                    </tr>
-                </tbody>
-            </table>
-            @endforeach
-        </div>
-    </div>
-</div>
 {{-- penetapan_penyedia --}}
-<div class="col-12 grid-margin stretch-card">
-    <div class="card shadow">
-        <div class="card-body">
-            <table border="0" align="center">
-                <tr>
-                    <td>
-                        <img src="{{asset('img/logo_jatim.png')}}" width="70" height="70">
-                    </td>
-                    <td>
-                        <center>
-                            <font size="3"><b>PEMERINTAH PROVINSI JAWA TIMUR</b></font><br>
-                            <font size="3">DINAS KOMUNIKASI DAN INFORMATIKA</font><br>
-                            <font size="3">Jl. Ahmad Yani 242-244 Telp. (031) 8294608 Fax. (031) 8294517</font><br>
-                            <font size="3">Website : http://www.jatimprov.go.id </font><br>
-                            <font size="2">Email:kominfo@jatimprov.go.id</font><br>
-                            <font size="3">S U R A B A Y A-60235</font><br>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <hr>
-                    </td>
-                </tr>
-            </table>
-            <table border="0" align="center">
-                <tr>
-                    <td width="560">
-                        <center><b>PENETAPAN PENYEDIA BARANG / JASA</b>
-                    </td>
-                <tr>
-            </table>
-            @foreach ($PenetapanPenyediaJasa as $PenetapanPenyediaJasa)
-            <table border="0" align="center">
-                <tr>
-                    <td width="50">
-                        <center>
-                            <font size="2">Nomor</font>
-                    </td>
-                    <td>
-                        <center>
-                            <font size="2">:</font>
-                    </td>
-                    <td width="150">
-                        <center>
-                            <font size="2">020/{{$PenetapanPenyediaJasa->nomor}}/114.6/{{$PenetapanPenyediaJasa->tanggal->isoFormat('Y')}}</font>
-                    </td>
-                <tr>
-            </table>
-            <br>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    {{-- //memanggil tanggal dan no.pengadaan --}}
-                    <td width="560" style="text-indent: 45px; text-align: justify;">Berdasarkan Berita Acara Evaluasi Dokumen Prakualifikasi Tanggal {{$PenetapanPenyediaJasa->deskripsi_tgl}} Nomor : 020/{{$PenetapanPenyediaJasa->nomor}}/114.6/{{$PenetapanPenyediaJasa->tanggal->isoFormat('Y')}} dan Berita Acara Klarifikasi/Negosiasi Penawaran Tanggal {{$pjb->tanggal_sk->isoFormat('D MMMM Y')}} Nomor : {{$pjb->nomor_sk}}, Pekerjaan Pengadaan {{$PenetapanPenyediaJasa->pengadaan->jenis_pengadaan}}, dengan ini Pejabat Pengadaan Dinas Komunikasi dan Informatika Provinsi Jawa Timur menetapkan penyedia jasa tersebut di bawah ini untuk sebagai Penyedia Barang/Jasa dengan nilai HPS sebesar Rp. {{$PenetapanPenyediaJasa->pengadaan->total_hps}},- ({{$PenetapanPenyediaJasa->pengadaan->deskripsi_hps}}) :</td>
-                </tr>
-            </table>
-            <br>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="190">Nama Perusahaan</td>
-                    <td width="10">:</td>
-                    <td width="300">{{$PenetapanPenyediaJasa->pengadaan->pelaksana->pt_pelaksana}}</td>
-                </tr>
-                <tr>
-                    <td width="190">Nama Penanggung Jawab</td>
-                    <td width="10">:</td>
-                    <td width="300">{{$PenetapanPenyediaJasa->pengadaan->pelaksana->nama_pelaksana}}</td>
-                </tr>
-                <tr>
-                    <td width="190">Alamat Perusahaan</td>
-                    <td width="10">:</td>
-                    <td width="300">{{$PenetapanPenyediaJasa->pengadaan->pelaksana->alamat}}</td>
-                </tr>
-                <tr>
-                    <td width="190">Nomor Pokok Wajib Pajak</td>
-                    <td width="10">:</td>
-                    <td width="300">{{$PenetapanPenyediaJasa->pengadaan->pelaksana->npwp}}</td>
-                </tr>
-                <tr>
-                    <td width="190">Harga Penawaran Setelah Negosiasi</td>
-                    <td width="10">:</td>
-                    <td width="300">Rp. {{number_format($PenetapanPenyediaJasa->pengadaan->nilai_negosiasi)}},-({{$PenetapanPenyediaJasa->pengadaan->deskripsi_negosiasi}})</td>
-                </tr>
-            </table>
-            <br>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="560" style="text-indent: 45px; text-align: justify;">Demikian atas perhatiannya diucapkan terima kasih.</td>
-                </tr>
-            </table>
-            <br>
-            <table border="0" align="center">
-                <tr>
-                    <td width="300"> </td>
-                    <td width="250" align="center">Surabaya, {{$PenetapanPenyediaJasa->tanggal->isoFormat('D MMMM Y')}}</td>
-                </tr>
-                <tr>
-                    <td width="300"> </td>
-                    <td align="center">PEJABAT PENGADAAN</td>
-                </tr>
-            </table>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <table border="0" align="center">
-                <tr>
-                    <td width="300"> </td>
-                    <td width="250" align="center"><u>{{$pjb->pejabat_pengadaan}}</u></td>
-                </tr>
-                <tr>
-                    <td width="300"> </td>
-                    <td align="center">NIP. {{$pjb->nip_pejabat_pengadaan}}</td>
-                </tr>
-            </table>
-            @endforeach
-        </div>
-    </div>
-</div>
+
 {{-- nota_dinas3 --}}
-<div class="col-12 grid-margin stretch-card">
-    <div class="card shadow">
-        <div class="card-body">
-            <div style="text-align: center">
-                <font color="black" border="0" align="center" font-size="2">
-                    <p align="center"><b> DINAS KOMUNIKASI DAN INFORMATIKA </b></p>
-                    <p align="center"><b> PROVINSI JAWA TIMUR </b></p>
-                </font>
-                <hr width="630" colspan="2">
-                <p align="center"><u><b> NOTA DINAS </b></u></p>
-            </div>
-            <br>
-            <div style="font-family: Arial;">
-                <table border="0" align="center" font-size="2">
-                    <tr>
-                        <td width="80">Kepada</td>
-                        <td>:</td>
-                        <td width="475">Yth. Sdr. Panitia Pengadaan Dinas Komunikasi dan</td>
-                    </tr>
-                    <tr>
-                        <td width="80">Dari</td>
-                        <td>:</td>
-                        <td width="475">Pejabat Pengadaan</td>
-                    </tr>
-                    <tr>
-                        <td>Tanggal</td>
-                        <td>:</td>
-                        <td>{{$pengadaan->tanggal->isoFormat('D MMMM Y')}}</td>
-        
-                    </tr>
-                    <tr>
-                        <td>Nomor</td>
-                        <td>:</td>
-                        <td>020/{{$pengadaan->nomor}}/114.6/{{$pengadaan->tanggal->format('Y')}}</td>
-                    </tr>
-                    <tr>
-                        <td>Sifat</td>
-                        <td>:</td>
-                        <td>Segera</td>
-                    </tr>
-                    <tr>
-                        <td>Lampiran</td>
-                        <td>:</td>
-                        <td>1 (satu) berkas</td>
-                    </tr>
-                    <tr>
-                        <td width="80">Perihal</td>
-                        <td>:</td>
-                        <td width="475">Penyampaian Berita Acara Proses Pengadaan Langsung</td>
-                    </tr>
-                </table>
-                <br>
-            </div>
-            <hr width="630" colspan="2">
-            @php
-            use App\Models\Jadwal;
-            use App\Models\pejabat;
-        
-            $png = $pengadaan->pengadaan_id;
-        
-            $BeritaAcaraHasilPengadaanLangsung = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
-            ->where('jadwals.kegiatan', '=', 'BA. Hasil Pengadaan Langsung')
-            ->get();
-            $pejabat = Pejabat::all();
-        
-            @endphp
-            <br>
-            
-            <table border="0" align="center" font-size="2" width="600">
-                <tr>
-                    <td style="text-align: left ;text-align: justify; text-indent: 45px;"> @foreach ($BeritaAcaraHasilPengadaanLangsung as $bahpl) Sesuai dengan Berita Acara Hasil Pengadaan Langsung Nomor : 020/{{$bahpl->nomor}}/114.6/{{$bahpl->tanggal->format('Y')}} Tanggal {{$bahpl->tanggal}}@endforeach untuk pengadaan{{$pengadaan->pengadaan->jenis_pengadaan}} Printer maka bersama ini kami sampaikan administrasi proses pengadaan langsung yang telah selesai dilaksanakan terhadap:</td>
-                </tr>
-            </table>
-            <br>
-            <table border="0" align="center" font-size="2">
-                <tr>
-                    <td width="150">Nama Perusahaan</td>
-                    <td>:</td>
-                    <td>{{ $pengadaan->pengadaan->pelaksana->pt_pelaksana }}</td>
-                </tr>
-                <tr>
-                    <td width="150">Alamat</td>
-                    <td>:</td>
-                    <td>{{ $pengadaan->pengadaan->pelaksana->alamat }}, {{ $pengadaan->pengadaan->pelaksana->kota }}</td>
-                </tr>
-                <tr>
-                    <td width="150">NPWP</td>
-                    <td>:</td>
-                    <td>{{ $pengadaan->pengadaan->pelaksana->npwp }}</td>
-                </tr>
-                <tr>
-                    <td width="150">Harga Penawaran Setelah Negosiasi</td>
-                    <td>:</td>
-                    <td>Rp. {{ number_format($pengadaan->pengadaan->nilai_negosiasi)}},-({{ $pengadaan->pengadaan->deskripsi_negosiasi}})</td>
-                </tr>
-            </table>
-            <br>
-            <table border="0" align="center" font-size="1" width="600">
-                <tr>
-                    <td style="text-align: left ;text-align: justify; text-indent: 45px;">Demikian atas perhatiannya diucapkan terima kasih.</td>
-                </tr>
-            </table>
-            <br>
-            <table border="0" align="center">
-                <tr>
-                    <td width="350"> </td>
-                    <td align="center" width="260">PEJABAT PENGADAAN</td>
-                </tr>
-            </table>
-            <br>
-            <br>
-            <br>
-                <table border="0" align="center">
-                    <tr>
-                        <td width="350"> </td>
-                        <td align="center" width="260"><u>{{$pjb->pejabat_pengadaan}}</u></td>
-                    </tr>
-                    <tr>
-                        <td width="350"> </td>
-                        <td align="center">NIP. {{$pjb->nip_pejabat_pengadaan}}</td>
-                    </tr>
-                </table>
-            @endforeach
-        </div>
-    </div>
-</div>
+
 {{-- undangan_penyedia --}}
 
 {{-- surat_perintah_kerja --}}
