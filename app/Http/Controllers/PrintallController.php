@@ -21,7 +21,7 @@ class PrintallController extends Controller
         //     ->where('nilai_negosiasi', '<=', 50000000)
         // ->get();
         $pengadaan = Pengadaan::where('nilai_negosiasi', '<=', 50000000)
-        ->get();
+            ->get();
         $pelaksana = Pelaksana::all();
 
         return view(
@@ -33,7 +33,7 @@ class PrintallController extends Controller
     public function printall_2()
     {
         $pengadaan = Pengadaan::where('nilai_negosiasi', '>', 50000000)
-        ->get();
+            ->get();
         $pelaksana = Pelaksana::all();
 
         return view(

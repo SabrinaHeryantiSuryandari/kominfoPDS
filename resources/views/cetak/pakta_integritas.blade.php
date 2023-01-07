@@ -70,7 +70,7 @@
     <br><br><br><br>
     <div class="row">
         <div style="text-align: center">
-            <table font-size="3" >
+            <table font-size="3">
                 <tr>
                     <td width="300"></td>
                     <td>Surabaya, {{$pengadaan->tanggal->isoFormat('D MMMM Y')}}</td>
