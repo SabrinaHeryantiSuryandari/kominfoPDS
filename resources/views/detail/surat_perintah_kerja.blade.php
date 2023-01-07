@@ -34,7 +34,7 @@
         ->where('jadwals.kegiatan', '=', 'Surat Penawaran Harga')
         ->get();
         $BeritaAcaraHasilKlarifikasiNegosiasi = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
-        ->where('jadwals.kegiatan', '=', 'BA. Klarifikasi/egosiasi')
+        ->where('jadwals.kegiatan', '=', 'BA. Klarifikasi/Negosiasi')
         ->get();
         $BeritaAcaraHasilPengadaanLangsung = Jadwal::where('jadwals.pengadaan_id', 'like', "%" . $png . "%")
         ->where('jadwals.kegiatan', '=', 'BA. Hasil Pengadaan Langsung')

@@ -143,7 +143,7 @@ Route::get('pengadaan1/printall/{id}', [PrintallController::class, 'print_all'])
 
 Route::get('/allpengadaan2', [PrintallController::class, 'printall_2']);
 Route::get('/allpengadaan2/showall/{id}', [PrintallController::class, 'showall'])->name('allpengadaan2.show');
-Route::get('pengadaan2/printall/{id}', [PrintallController::class, 'printall'])->name('allpengadaan2.print');
+Route::get('pengadaan2/printall/{id}', [PrintallController::class, 'print_all'])->name('allpengadaan2.print');
 
 //print pengadaan1 <50juta
 Route::get('print', [PdfController::class, 'index']);

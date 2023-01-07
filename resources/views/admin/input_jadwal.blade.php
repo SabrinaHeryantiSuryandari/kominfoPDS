@@ -149,7 +149,6 @@
               <option value="Nota Dinas dari PPK ke Pejabat Pengadaan + Lampiran OE (HPS)">Nota Dinas dari PPK ke Pejabat Pengadaan + Lampiran OE (HPS)</option>
               <option value="Surat Undangan, Pengambilan Dokumen Kualifikasi dan Dokumen Pengadaan Langsung kepada Penyedia Barang/Jasa">Surat Undangan, Pengambilan Dokumen Kualifikasi dan Dokumen Pengadaan Langsung kepada Penyedia Barang/Jasa</option>
               <option value="Pakta Integritas">Pakta Integritas</option>
-              <option value="Surat Pernyataan Minat">Surat Pernyataan Minat</option>
               <option value="Pemasukan Dokumen Kualifikasi">Pemasukan Dokumen Kualifikasi</option>
               <option value="Daftar Hadir Pengembalian Dokumen Prakualifikasi">Daftar Hadir Pengembalian Dokumen Prakualifikasi</option>
               <option value="BA. Evaluasi Dokumen Prakualifikasi">BA. Evaluasi Dokumen Prakualifikasi</option>
@@ -165,6 +164,7 @@
               <option value="Nota Dinas dari Pejabat Pengadaan ke PPK">Nota Dinas dari Pejabat Pengadaan ke PPK</option>
               <option value="Penetapan Penyedia Jasa">Penetapan Penyedia Jasa</option>
               <option value="Penunjukan Penyedia Barang/Jasa">Penunjukan Penyedia Barang/Jasa</option>
+              <option value="Kuitansi Kontrak">Kuitansi Kontrak</option>
               <option value="Surat Perintah Kerja">Surat Perintah Kerja</option>
               <option value="Surat Perintah Mulai Kerja (SPMK)">Surat Perintah Mulai Kerja (SPMK)</option>
               <option value="BA. Serah Terima Hasil Pekerjaan">BA. Serah Terima Hasil Pekerjaan</option>
@@ -172,9 +172,12 @@
               <option value="BA. Penyerahan Barang/Jasa">BA. Penyerahan Barang/Jasa</option>
               <option value="BA. Hasil Pemeriksaan Administratif">BA. Hasil Pemeriksaan Administratif</option>
               <option value="BA. Hasil Pembayaran">BA. Hasil Pembayaran</option>
-              <option value="Kuitansi Kontrak">Kuitansi Kontrak</option>
               <option value="Intruksi Kepada Peserta Pengadaan (IKPP)">Intruksi Kepada Peserta Pengadaan (IKPP)</option>
               <option value="Term Of Refference (TOR)">Term Of Refference (TOR)</option>
+              <option value=""></option>
+              <option value="" style="text-color: rad">Nomor Surat di isi lengkap jika tidak ada di isi "0"</option>
+              <option value="Surat Pernyataan Minat">Surat Pernyataan Minat</option>
+              <option value="Surat Penawaran Harga">Surat Penawaran Harga</option>
             </select>
           </div>
           <div class="mb-4">
