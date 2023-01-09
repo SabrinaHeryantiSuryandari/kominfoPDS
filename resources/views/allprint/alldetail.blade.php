@@ -2479,7 +2479,7 @@
             <br>
             <table border="0" align="center" font-size="2" width="600">
                 <tr>
-                    <td style="text-align: left ;text-align: justify; text-indent: 45px;"> @foreach ($BeritaAcaraHasilPengadaanLangsung as $bahpl) Sesuai dengan Berita Acara Hasil Pengadaan Langsung Nomor : 020/{{$bahpl->nomor}}/114.6/{{$bahpl->tanggal->format('Y')}} Tanggal {{$bahpl->tanggal}}@endforeach untuk pengadaan{{$NotaDinasdariPejabatPengadaankePPK->pengadaan->jenis_pengadaan}} Printer maka bersama ini kami sampaikan administrasi proses pengadaan langsung yang telah selesai dilaksanakan terhadap:</td>
+                    <td style="text-align: left ;text-align: justify; text-indent: 45px;"> @foreach ($BeritaAcaraHasilPengadaanLangsung as $BeritaAcaraHasilPengadaanLangsung) Sesuai dengan Berita Acara Hasil Pengadaan Langsung Nomor : 020/{{$$BeritaAcaraHasilPengadaanLangsung->nomor}}/114.6/{{$$BeritaAcaraHasilPengadaanLangsung->tanggal->format('Y')}} Tanggal {{$$BeritaAcaraHasilPengadaanLangsung->tanggal}}@endforeach untuk pengadaan{{$NotaDinasdariPejabatPengadaankePPK->pengadaan->jenis_pengadaan}} Printer maka bersama ini kami sampaikan administrasi proses pengadaan langsung yang telah selesai dilaksanakan terhadap:</td>
                 </tr>
             </table>
             <br>
@@ -3132,7 +3132,7 @@
                     <td style="vertical-align:top">4.</td>
                     {{-- no surat lain --}}
                     <td style="vertical-align:top">Berita Acara Hasil Pengadaan Langsung Nomor :
-                        @foreach ($BeritaAcaraHasilPengadaanLangsung as $bahpl)
+                        @foreach ($BeritaAcaraHasilPengadaanLangsung as $BeritaAcaraHasilPengadaanLangsung)
                         020/{{$BeritaAcaraHasilPengadaanLangsung->nomor}}/114.6/{{$BeritaAcaraHasilPengadaanLangsung->tanggal->format('Y')}} Tanggal {{$BeritaAcaraHasilPengadaanLangsung->tanggal->format('D MMMM Y')}}
                         @endforeach
                     </td>
