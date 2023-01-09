@@ -233,7 +233,7 @@ $BeritaAcaraHasilPengadaanLangsung = Jadwal::where('jadwals.pengadaan_id', 'like
 
                 <tr>
                     <th>{{$no++}}</th>
-                    <!-- <th scope="row">{{$brg->pengadaan_id}}</th> -->
+                    {{-- <!-- <th scope="row">{{$brg->pengadaan_id}}</th> --> --}}
                     <td>{{$brg->barang}}</td>
                     <td align="center">{{$brg->jumlah_barang}}</td>
                     <td align="center">{{$brg->satuan}}</td>
@@ -3090,7 +3090,7 @@ $BeritaAcaraHasilPengadaanLangsung = Jadwal::where('jadwals.pengadaan_id', 'like
                     <tr>
                         <td style="text-align:right" colspan="5"><b>Total</b></td>
                         @php
-                        $png = $pengadaan->pengadaan_id;
+                        $png = $pengadaan->id;
                         $sum = DB::table('barangs')
                         ->where('barangs.pengadaan_id', 'like', "%" . $png . "%")
                         ->sum('jumlah_harga');
@@ -3364,7 +3364,7 @@ $BeritaAcaraHasilPengadaanLangsung = Jadwal::where('jadwals.pengadaan_id', 'like
                     <tr>
                         <td style="text-align:right" colspan="6">Total</td>
                         @php
-                        $png = $pengadaan->pengadaan_id;
+                        $png = $pengadaan->id;
                         $sum = DB::table('barangs')
                         ->where('barangs.pengadaan_id', 'like', "%" . $png . "%")
                         ->sum('jumlah_harga');
@@ -4039,7 +4039,7 @@ $BeritaAcaraHasilPengadaanLangsung = Jadwal::where('jadwals.pengadaan_id', 'like
                 <tr>
                     <td style="text-align:right" colspan="5"><b>Total</b></td>
                     @php
-                    $png = $pengadaan->pengadaan_id;
+                    $png = $pengadaan->id;
                     $sum = DB::table('barangs')
                     ->where('barangs.pengadaan_id', 'like', "%" . $png . "%")
                     ->sum('jumlah_harga');
@@ -4459,7 +4459,7 @@ $BeritaAcaraHasilPengadaanLangsung = Jadwal::where('jadwals.pengadaan_id', 'like
                 <tr>
                     <td style="vertical-align:top" style="text-align:right" colspan="5"><b>Total</b></td>
                     @php
-                    $png = $pengadaan->pengadaan_id;
+                    $png = $pengadaan->id;
                     $sum = DB::table('barangs')
                     ->where('barangs.pengadaan_id', 'like', "%" . $png . "%")
                     ->sum('jumlah_harga');
@@ -4993,7 +4993,7 @@ $BeritaAcaraHasilPengadaanLangsung = Jadwal::where('jadwals.pengadaan_id', 'like
         <tr>
     </table>
 
-    @foreach ($IntruksiKepadaPesertaPengadaan as $IntruksiKepadaPesertaPengadaan)
+    {{-- @foreach ($IntruksiKepadaPesertaPengadaan as $IntruksiKepadaPesertaPengadaan) --}}
     <!-- Section A -->
     <br>
     <table border="0">
@@ -5035,7 +5035,7 @@ $BeritaAcaraHasilPengadaanLangsung = Jadwal::where('jadwals.pengadaan_id', 'like
                 <b> </b>
             </td>
             <td width="325" style="vertical-align:top; text-align:justify">
-                Pejabat Pengadaan mengundang peserta yang dianggap mampu untuk menyampaikan penawaran atas pengadaan {{$IntruksiKepadaPesertaPengadaan->pengadaan->jenis_pengadaan}}
+                Pejabat Pengadaan mengundang peserta yang dianggap mampu untuk menyampaikan penawaran atas pengadaan {{$pengadaan->jenis_pengadaan}}
             </td>
         <tr>
         <tr>
@@ -5111,7 +5111,7 @@ $BeritaAcaraHasilPengadaanLangsung = Jadwal::where('jadwals.pengadaan_id', 'like
                 <b> </b>
             </td>
             <td width="359" style="vertical-align:top; text-align:justify">
-                Pejabat Pengadaan mengundang peserta yang dianggap mampu untuk menyampaikan penawaran atas pengadaan {{$pengadaan->pengadaan->jenis_pengadaan}}
+                Pejabat Pengadaan mengundang peserta yang dianggap mampu untuk menyampaikan penawaran atas pengadaan {{$pengadaan->jenis_pengadaan}}
             </td>
         <tr>
     </table>
@@ -7075,7 +7075,7 @@ $BeritaAcaraHasilPengadaanLangsung = Jadwal::where('jadwals.pengadaan_id', 'like
             </td>
         <tr>
     </table>
-    @endforeach
+    {{-- @endforeach --}}
 </div>
 
 <!-- TOR -->
@@ -7087,11 +7087,11 @@ $BeritaAcaraHasilPengadaanLangsung = Jadwal::where('jadwals.pengadaan_id', 'like
             </td>
         <tr>
     </table>
-    @foreach ($TermOfRefference as $TermOfRefference)
+    {{-- @foreach ($TermOfRefference as $TermOfRefference) --}}
     <table border="0" align="center">
         <tr>
             <td style="vertical-align:top" style="text-align: center; text-transform: uppercase;">
-                <b>Kegiatan Pengadaan Belanja {{$TermOfRefference->pengadaan->jenis_pengadaan}}</b>
+                <b>Kegiatan Pengadaan Belanja {{$pengadaan->jenis_pengadaan}}</b>
             </td>
         <tr>
     </table>
@@ -7127,7 +7127,7 @@ $BeritaAcaraHasilPengadaanLangsung = Jadwal::where('jadwals.pengadaan_id', 'like
                 <td style="text-transform: uppercase;" width="540"><b>Nama Kegiatan</b></td>
             </tr>
             <tr>
-                <td style="text-align:justify;" width="540">"{{$TermOfRefference->pengadaan->jenis_pengadaan}}"</td>
+                <td style="text-align:justify;" width="540">"{{$pengadaan->jenis_pengadaan}}"</td>
             </tr>
         </table>
     </div>
@@ -7185,7 +7185,7 @@ $BeritaAcaraHasilPengadaanLangsung = Jadwal::where('jadwals.pengadaan_id', 'like
             </tr>
             <tr>
                 <td style="vertical-align:top">1</td>
-                <td style="vertical-align:top" colspan="5">{{$TermOfRefference->pengadaan->jenis_pengadaan}}</td>
+                <td style="vertical-align:top" colspan="5">{{$pengadaan->jenis_pengadaan}}</td>
             </tr>
             <tbody>
                 @php $no = 1; @endphp
@@ -7202,7 +7202,7 @@ $BeritaAcaraHasilPengadaanLangsung = Jadwal::where('jadwals.pengadaan_id', 'like
                 <tr>
                     <td style="vertical-align:top" style="text-align:right" colspan="5"><b>Total</b></td>
                     @php
-                    $png = $pengadaan->pengadaan_id;
+                    $png = $pengadaan->id;
                     $sum = DB::table('barangs')
                     ->where('barangs.pengadaan_id', 'like', "%" . $png . "%")
                     ->sum('jumlah_harga');
@@ -7216,7 +7216,7 @@ $BeritaAcaraHasilPengadaanLangsung = Jadwal::where('jadwals.pengadaan_id', 'like
                 </tr>
                 <tr>
                     <td style="vertical-align:top" style="text-align:right" colspan="5"><b> Jumlah Total</b></td>
-                    <td style="vertical-align:top">Rp. {{number_format($TermOfRefference->pengadaan->nilai_negosiasi)}}</td>
+                    <td style="vertical-align:top">Rp. {{number_format($pengadaan->nilai_negosiasi)}}</td>
                 </tr>
             </tbody>
         </table>
@@ -7236,7 +7236,7 @@ $BeritaAcaraHasilPengadaanLangsung = Jadwal::where('jadwals.pengadaan_id', 'like
                 <tr>
                     <td width="50">Hari</td>
                     <td width="10">:</td>
-                    <td width="470">{{$TermOfRefference->tanggal->isoFormat('dddd')}}</td>
+                    <td width="470">{{$NotaDinasdariPPKkePejabatPengadaan->tanggal->isoFormat('dddd')}}</td>
                 </tr>
             </table>
         </div>
@@ -7245,7 +7245,7 @@ $BeritaAcaraHasilPengadaanLangsung = Jadwal::where('jadwals.pengadaan_id', 'like
                 <tr>
                     <td width="50">Tanggal</td>
                     <td width="10">:</td>
-                    <td width="470">{{$TermOfRefference->tanggal->isoFormat('D MMMM Y')}}</td>
+                    <td width="470">{{$NotaDinasdariPPKkePejabatPengadaan->tanggal->isoFormat('D MMMM Y')}}</td>
                 </tr>
             </table>
         </div>
@@ -7265,7 +7265,7 @@ $BeritaAcaraHasilPengadaanLangsung = Jadwal::where('jadwals.pengadaan_id', 'like
                     <td style="text-transform: uppercase;" width="540"><b>OUTPUT KEGIATAN</b></td>
                 </tr>
                 <tr>
-                    <td width="540">Tersedianya {{$TermOfRefference->pengadaan->jenis_pengadaan}} tepat waktu sesuai jadwal yang ada
+                    <td width="540">Tersedianya {{$pengadaan->jenis_pengadaan}} tepat waktu sesuai jadwal yang ada
                     </td>
                 </tr>
             </table>
@@ -7295,7 +7295,7 @@ $BeritaAcaraHasilPengadaanLangsung = Jadwal::where('jadwals.pengadaan_id', 'like
                     <td style="text-transform: uppercase;" width="540"><u><i><b>RINCIAN RENCANA ANGGARAN BIAYA</b></i></u></td>
                 </tr>
                 <tr>
-                    <td width="540">Dari dana APBD Dinas Kominfo Prov. Jawa Timur Tahun {{$TermOfRefference->tanggal->isoFormat('Y')}} dengan kode rekening {{$TermOfRefference->pengadaan->kode_rekening}}
+                    <td width="540">Dari dana APBD Dinas Kominfo Prov. Jawa Timur Tahun {{$NotaDinasdariPPKkePejabatPengadaan->tanggal->isoFormat('Y')}} dengan kode rekening {{$pengadaan->kode_rekening}}
                     </td>
                 </tr>
             </table>
@@ -7326,7 +7326,7 @@ $BeritaAcaraHasilPengadaanLangsung = Jadwal::where('jadwals.pengadaan_id', 'like
             @endforeach
         </div>
     </div>
-    @endforeach
+    {{-- @endforeach --}}
 
 
 
