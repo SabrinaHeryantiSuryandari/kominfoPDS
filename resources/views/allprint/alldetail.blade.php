@@ -3114,7 +3114,7 @@
                     <td style="vertical-align:top">2.</td>
                     {{-- no surat lain --}}
                     <td style="vertical-align:top">Surat Penawaran Harga Nomor :
-                        @foreach ($SuratPenawaranHarga as $sph)
+                        @foreach ($SuratPenawaranHarga as $SuratPenawaranHarga)
                         {{$SuratPenawaranHarga->nomor}} Tanggal {{$SuratPenawaranHarga->tanggl}}
                         @endforeach
                     </td>
@@ -3123,7 +3123,7 @@
                     <td style="vertical-align:top">3.</td>
                     {{-- no surat lain --}}
                     <td style="vertical-align:top">Berita Acara Hasil Klarifikasi dan Negosiasi Nomor :
-                        {{-- @foreach ($BeritaAcaraHasilKlarifikasiNegosiasi as $bahkn) --}}
+                        {{-- @foreach ($BAKlarifikasiNegosiasi as $BAKlarifikasiNegosiasi) --}}
                         020/{{$BAKlarifikasiNegosiasi->nomor}}/114.6/{{$BAKlarifikasiNegosiasi->tanggal->format('Y')}} Tanggal {{$BAKlarifikasiNegosiasi->tanggal}}
                         {{-- @endforeach --}}
                     </td>
