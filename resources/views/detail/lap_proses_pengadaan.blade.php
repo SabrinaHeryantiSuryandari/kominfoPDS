@@ -146,7 +146,7 @@
                 @endforeach
                 <br>
                 <div>
-                    <table width="700" align="center" border="1" align="">
+                    <table width="700" align="center" border="0" align="">
                         <tr>
                             <td style="vertical-align:top" width="25"></td>
                             <td style="vertical-align:top" width="160" colspan="4">Dengan ini menyatakan bahwa :</td>

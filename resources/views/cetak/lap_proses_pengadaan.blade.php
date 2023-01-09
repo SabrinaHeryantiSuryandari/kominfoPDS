@@ -310,7 +310,7 @@
     </div>
     <br>
     <div>
-        <table border="1" align="center" style="color: #000000; border-color: #000000; border-collapse: collapse;">
+        <table border="0" align="center" style="color: #000000; border-color: #000000; border-collapse: collapse;">
             <thead>
                 <tr>
                     <td style="vertical-align:top">
