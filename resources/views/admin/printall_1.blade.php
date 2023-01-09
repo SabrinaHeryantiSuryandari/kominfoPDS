@@ -26,6 +26,7 @@
                     <p>{{ $message }}</p>
                 </div>
                 @endif
+                <p style="color: rgb(236, 109, 130)">Note: Pastikan Semua Kegiatan Jadwal Terinput</p>
                 {{-- <div class="mb-4"> --}}
                     <table id="data1" class="table table-bordered" cellspacing="0">
                         <thead>

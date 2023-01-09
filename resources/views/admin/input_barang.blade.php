@@ -75,6 +75,7 @@
                         <input type="number" class="form-control" id="harga_satuan" name="harga_satuan" placeholder="1200000">
                         <small class="text-danger">{{ $errors->first('harga_satuan') }}</small>
                     </div>
+                    <p style="color: rgb(236, 109, 130)">Note: Pastikan Semua Data Terisi</p>
                     <div class="modal-footer mt-3">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                         <button type="submit" class="btn btn-primary ">Simpan <i class="fa fa-save"></i></button>
@@ -147,6 +148,7 @@
                         <input type="text" class="form-control" id="harga_satuan" name="harga_satuan" value="{{ $br->harga_satuan }}" placeholder="10000000">
                         <small class="text-danger">{{ $errors->first('harga_satuan') }}</small>
                     </div>
+                    <p style="color: rgb(236, 109, 130)">Note: Pastikan Semua Data Terisi</p>
                     <div class="modal-footer mt-3">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                         <button type="submit" class="btn btn-primary ">Simpan <i class="fa fa-save"></i></button>

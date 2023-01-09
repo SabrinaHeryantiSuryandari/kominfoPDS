@@ -175,7 +175,7 @@
               <option value="Intruksi Kepada Peserta Pengadaan (IKPP)">Intruksi Kepada Peserta Pengadaan (IKPP)</option>
               <option value="Term Of Refference (TOR)">Term Of Refference (TOR)</option>
               <option value=""></option>
-              <option value="" style="text-color: rad">Nomor Surat di isi lengkap jika tidak ada di isi "0"</option>
+              <option value="" style="color: rgb(236, 109, 130)">Nomor Surat di isi lengkap jika tidak ada di isi "0/-"</option>
               <option value="Surat Pernyataan Minat">Surat Pernyataan Minat</option>
               <option value="Surat Penawaran Harga">Surat Penawaran Harga</option>
             </select>
@@ -190,33 +190,25 @@
             <input type="date" class="form-control" id="tanggal" name="tanggal" placeholder="10/10/2022">
             <small class="text-danger">{{ $errors->first('tanggal') }}</small>
           </div>
-          {{-- @if ('kegiatan' == 'Surat Pernyataan Minat')
-            <p>Masukkan Nomor Surat Dari perusahaan</p>
-            <div class="mb-4">
-              <label for="message-text" class="col-form-label">Nomor</label>
-              <input type="text" class="form-control" id="nomor" name="nomor" placeholder="020/655.8/114.6/2022">
-              <small class="text-danger">{{ $errors->first('nomor') }}</small>
+          <div class="mb-4">
+            <label for="message-text" class="col-form-label">Nomor</label>
+            <input type="text" class="form-control" id="nomor" name="nomor" placeholder=".../655.8/.../....">
+            <small class="text-danger">{{ $errors->first('nomor') }}</small>
+          </div>
+          <div class="mb-4">
+            <label for="message-text" class="col-form-label">Deskripsi Tanggal</label>
+            <input type="text" class="form-control" id="deskripsi_tgl" name="deskripsi_tgl" placeholder="Delapan Agustus Dua Ribu Dua Puluh Dua">
+            <small class="text-danger">{{ $errors->first('deskripsi_tgl') }}</small>
+          </div>
+          <p style="color: rgb(236, 109, 130)">Note: Pastikan Semua Data Terisi</p>
+          <div class="modal-footer mt-3">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+            <button type="submit" class="btn btn-primary ">Simpan <i class="fa fa-save"></i></button>
+          </div>
+        </form>
       </div>
-      @else --}}
-      <div class="mb-4">
-        <label for="message-text" class="col-form-label">Nomor</label>
-        <input type="text" class="form-control" id="nomor" name="nomor" placeholder=".../655.8/.../....">
-        <small class="text-danger">{{ $errors->first('nomor') }}</small>
-      </div>
-      {{-- @endif --}}
-      <div class="mb-4">
-        <label for="message-text" class="col-form-label">Deskripsi Tanggal</label>
-        <input type="text" class="form-control" id="deskripsi_tgl" name="deskripsi_tgl" placeholder="Delapan Agustus Dua Ribu Dua Puluh Dua">
-        <small class="text-danger">{{ $errors->first('deskripsi_tgl') }}</small>
-      </div>
-      <div class="modal-footer mt-3">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-        <button type="submit" class="btn btn-primary ">Simpan <i class="fa fa-save"></i></button>
-      </div>
-      </form>
     </div>
   </div>
-</div>
 </div>
 
 <!-- Modal Edit Jadwal -->
@@ -266,6 +258,46 @@
               <option value="Nota Dinas dari PPK ke Pejabat Pengadaan + Lampiran OE (HPS)">Nota Dinas dari PPK ke Pejabat Pengadaan + Lampiran OE (HPS)</option>
               <option value="Surat Undangan, Pengambilan Dokumen Kualifikasi dan Dokumen Pengadaan Langsung kepada Penyedia Barang/Jasa">Surat Undangan, Pengambilan Dokumen Kualifikasi dan Dokumen Pengadaan Langsung kepada Penyedia Barang/Jasa</option>
               <option value="Pakta Integritas">Pakta Integritas</option>
+              <option value="Pemasukan Dokumen Kualifikasi">Pemasukan Dokumen Kualifikasi</option>
+              <option value="Daftar Hadir Pengembalian Dokumen Prakualifikasi">Daftar Hadir Pengembalian Dokumen Prakualifikasi</option>
+              <option value="BA. Evaluasi Dokumen Prakualifikasi">BA. Evaluasi Dokumen Prakualifikasi</option>
+              <option value="Lampiran BA. Evaluasi Dokumen Prakualifikasi">Lampiran BA. Evaluasi Dokumen Prakualifikasi</option>
+              <option value="Surat Undangan Permintaan Penawaran Harga">Surat Undangan Permintaan Penawaran Harga</option>
+              <option value="BA. Penjelasan Pekerjaan">BA. Penjelasan Pekerjaan</option>
+              <option value="Pemasukan Penawaran">Pemasukan Penawaran</option>
+              <option value="BA. Pembukaan Penawaran">BA. Pembukaan Penawaran</option>
+              <option value="Surat Undangan Klarifikasi/Negosiasi">Surat Undangan Klarifikasi/Negosiasi</option>
+              <option value="BA. Klarifikasi/Negosiasi">BA. Klarifikasi/Negosiasi</option>
+              <option value="Lampiran BA. Klarifikasi/Negosiasi">Lampiran BA. Klarifikasi/Negosiasi</option>
+              <option value="BA. Hasil Pengadaan Langsung">BA. Hasil Pengadaan Langsung</option>
+              <option value="Nota Dinas dari Pejabat Pengadaan ke PPK">Nota Dinas dari Pejabat Pengadaan ke PPK</option>
+              <option value="Penetapan Penyedia Jasa">Penetapan Penyedia Jasa</option>
+              <option value="Penunjukan Penyedia Barang/Jasa">Penunjukan Penyedia Barang/Jasa</option>
+              <option value="Kuitansi Kontrak">Kuitansi Kontrak</option>
+              <option value="Surat Perintah Kerja">Surat Perintah Kerja</option>
+              <option value="Surat Perintah Mulai Kerja (SPMK)">Surat Perintah Mulai Kerja (SPMK)</option>
+              <option value="BA. Serah Terima Hasil Pekerjaan">BA. Serah Terima Hasil Pekerjaan</option>
+              <option value="Laporan Proses Pengadaan Barang/Jasa">Laporan Proses Pengadaan Barang/Jasa</option>
+              <option value="BA. Penyerahan Barang/Jasa">BA. Penyerahan Barang/Jasa</option>
+              <option value="BA. Hasil Pemeriksaan Administratif">BA. Hasil Pemeriksaan Administratif</option>
+              <option value="BA. Hasil Pembayaran">BA. Hasil Pembayaran</option>
+              <option value="Intruksi Kepada Peserta Pengadaan (IKPP)">Intruksi Kepada Peserta Pengadaan (IKPP)</option>
+              <option value="Term Of Refference (TOR)">Term Of Refference (TOR)</option>
+              <option value=""></option>
+              <option value="" style="color: rgb(236, 109, 130)">Nomor Surat di isi lengkap jika tidak ada di isi "0/-"</option>
+              <option value="Surat Pernyataan Minat">Surat Pernyataan Minat</option>
+              <option value="Surat Penawaran Harga">Surat Penawaran Harga</option>
+            </select>
+            {{-- <select class="form-control" name="kegiatan" id="kegiatan" placeholder="Pilih Kegiatan">
+              <option value="{{$jdwl->kegiatan}}">-{{ $jdwl->kegiatan }} </option>
+              <option value=""></option>
+
+              <option value="">Pilih Pengadaan</option>
+              <option value=""></option>
+              <option value="Nota Dinas dari KPA ke PPK">Nota Dinas dari KPA ke PPK</option>
+              <option value="Nota Dinas dari PPK ke Pejabat Pengadaan + Lampiran OE (HPS)">Nota Dinas dari PPK ke Pejabat Pengadaan + Lampiran OE (HPS)</option>
+              <option value="Surat Undangan, Pengambilan Dokumen Kualifikasi dan Dokumen Pengadaan Langsung kepada Penyedia Barang/Jasa">Surat Undangan, Pengambilan Dokumen Kualifikasi dan Dokumen Pengadaan Langsung kepada Penyedia Barang/Jasa</option>
+              <option value="Pakta Integritas">Pakta Integritas</option>
               <option value="Surat Pernyataan Minat">Surat Pernyataan Minat</option>
               <option value="Pemasukan Dokumen Kualifikasi">Pemasukan Dokumen Kualifikasi</option>
               <option value="Daftar Hadir Pengembalian Dokumen Prakualifikasi">Daftar Hadir Pengembalian Dokumen Prakualifikasi</option>
@@ -293,7 +325,7 @@
               <option value="Intruksi Kepada Peserta Pengadaan (IKPP)">Intruksi Kepada Peserta Pengadaan (IKPP)</option>
               <option value="Term Of Refference (TOR)">Term Of Refference (TOR)</option>
 
-            </select>
+            </select> --}}
           </div>
           <div class="mb-4">
             <label for="message-text" class="col-form-label">Alokasi</label>
@@ -303,7 +335,7 @@
           <div class="mb-4">
             <label for="recipient-name" class="col-form-label">Tanggal</label>
             {{-- <input type="date" class="form-control" id="tanggal" name="tanggal" value="{{ $jdwl->tanggal }}"> --}}
-            <input type="date" class="form-control" id="recipient-name" name="tanggal" value="{{ $jdwl->tanggal }}" placeholder="Tanggal">
+            <input type="date" class="form-control" id="tanggal" name="tanggal" value="{{ $jdwl->tanggal }}">
             <small class="text-danger">{{ $errors->first('tanggal') }}</small>
           </div>
           <div class="mb-4">
@@ -316,6 +348,7 @@
             <input type="text" class="form-control" id="deskripsi_tgl" name="deskripsi_tgl" value="{{ $jdwl->deskripsi_tgl }}" placeholder="50.000.000">
             <small class="text-danger">{{ $errors->first('deskripsi_tgl') }}</small>
           </div>
+          <p style="color: rgb(236, 109, 130)">Note: Pastikan Semua Data Terisi</p>
           <div class="modal-footer mt-3">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
             <button type="submit" class="btn btn-primary "><i class="fa fa-save"></i> Update Data</button>

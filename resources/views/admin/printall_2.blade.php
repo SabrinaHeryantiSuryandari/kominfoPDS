@@ -26,6 +26,7 @@
                     <p>{{ $message }}</p>
                 </div>
                 @endif
+                <p style="color: rgb(236, 109, 130)">Note: Pastikan Semua Kegiatan Jadwal Terinput</p>
                 {{-- <div class="mb-4"> --}}
                     <table id="data1" class="table table-bordered" cellspacing="0">
                         <thead>
@@ -39,7 +40,7 @@
                         <tbody>
                           @foreach ($pengadaan as $p)
                           <tr>
-                            <td>{{ $p->pt_pelaksana }}</td>
+                            <td>{{ $p->pelaksana->pt_pelaksana }}</td>
                             <td>{{ $p->jenis_pengadaan }}</td>
                             <td>Rp. {{number_format($p->nilai_negosiasi)}}</td>
                             <td>

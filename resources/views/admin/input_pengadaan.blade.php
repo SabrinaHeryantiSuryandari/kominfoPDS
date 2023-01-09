@@ -162,7 +162,7 @@
             <input type="text" class="form-control" id="deskripsi_negosiasi" name="deskripsi_negosiasi" value="{{ old('deskripsi_negosiasi') }}" placeholder="Sepuluh Juta Rupiah">
             <small class="text-danger">{{ $errors->first('deskripsi_negosiasi') }}</small>
           </div>
-
+          <p style="color: rgb(236, 109, 130)">Note: Pastikan Semua Data Terisi</p>
           <div class="modal-footer mt-3">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
             <button type="submit" class="btn btn-primary ">Simpan <i class="fa fa-save"></i></button>
@@ -243,7 +243,7 @@
             <input type="text" class="form-control" id="deskripsi_negosiasi" name="deskripsi_negosiasi" value="{{ $pgn->deskripsi_negosiasi }}" placeholder="Sepuluh Juta Rupiah">
             <small class="text-danger">{{ $errors->first('deskripsi_negosiasi') }}</small>
           </div>
-
+          <p style="color: rgb(236, 109, 130)">Note: Pastikan Semua Data Terisi</p>
           <div class="modal-footer mt-3">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
             <button type="submit" class="btn btn-primary ">Simpan <i class="fa fa-save"></i></button>
